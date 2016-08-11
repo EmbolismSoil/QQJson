@@ -13,6 +13,8 @@
 #include <qqjson_null.h>
 #include <qqjson_number.h>
 #include <qqjson_boolen.h>
+#include <fstream>
+#include <sstream>
 
 
 typedef enum{Start, Expect_Key, Expect_Value,
@@ -55,13 +57,20 @@ int doExpectArrayValue(std::shared_ptr<T> ptr)
     return 0;
 }
 
-int main(void)
+int main(int argc, char *argv[])
 {
-    QQJsonDocument doc(std::string("{\"bool\":true, \"Object\" : {\"bool\": false, \"array\" : [1]}}"));
+    //QQJsonDocument doc(std::string("{\"bool\":true, \"Object\" : {\"bool\": false, \"array\" : [1]}}"));
+ //   if (argc != 2)
+    //    return 0;
+    std::ifstream t("test.json");
+    std::stringstream buffer;
+    buffer << t.rdbuf();
+    std::string contents(buffer.str());
+    QQJsonDocument doc(contents);
     std::shared_ptr<QQJsonX> ret;
 //    std::vector<QQJsonDocument::Token> tokens;
 
-    QQJsonDocument::Token Token;
+    QQJsonDocument::Token Token;    
     STATE state = Start;
     for (;;){
         Token = doc.peekNextToken();

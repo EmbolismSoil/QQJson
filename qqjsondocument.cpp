@@ -10,6 +10,15 @@ QQJsonDocument::QQJsonDocument(const std::string &str):
 
 }
 
+QQJsonDocument::QQJsonDocument(std::string &&str):
+    _Document(std::move(str)),
+    _WorkerIter(_Document.begin()),
+    _EndDocumentIter(_Document.end()),
+    _BeginDocumentIter(_Document.begin())
+{
+
+}
+
 QQJsonDocument::Token QQJsonDocument::peekNextToken()
 {
     if (_WorkerIter == _EndDocumentIter)
@@ -83,8 +92,8 @@ std::string QQJsonDocument::readNull()
 std::string QQJsonDocument::readNumber()
 {
     std::string::iterator tmpIter = _WorkerIter;
-    for (; tmpIter != _Document.end() && (*tmpIter < '0' || *tmpIter > '9'); ++tmpIter);
-    std::string number(_WorkerIter, tmpIter+1);
+    for (; tmpIter != _Document.end() && (*tmpIter >= '0' && *tmpIter <= '9'); ++tmpIter);
+    std::string number(_WorkerIter, tmpIter);
     _WorkerIter += number.length();
     return number;
 }

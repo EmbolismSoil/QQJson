@@ -10,7 +10,7 @@ public:
         return QQJsonX::QQJSON_STRING;
     }
     virtual const std::string toString() override{
-        return _String;
+        return "\"" + _String + "\"";
     }
 private:
     std::string _String;

@@ -14,6 +14,7 @@ public:
     }Token;
 
     QQJsonDocument(const std::string &);
+    QQJsonDocument(std::string &&);
     Token peekNextToken();
     //Token nextToken();
     void popToken();

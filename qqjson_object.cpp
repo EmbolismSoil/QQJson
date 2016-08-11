@@ -16,13 +16,15 @@ const std::string QQJsonObject::toString()
       //str.append(_ObjetName);
       str.append("{");
       for (auto &iter : _ObjectMap){
-         str.append((iter).first);
+
+         str.append("\"" + (iter).first + "\"");
          str.append(1, ':');
          auto ptr = (iter).second;
          str.append(ptr->toString());
          str.append(1, ',');
       }
-      str.append(1, '}');
+      str.pop_back();
+      str.append("}");
       return str;
 }
 

@@ -14,12 +14,13 @@ const std::string QQJsonArray::toString()
 {
     std::string str;
     str.append(_ArrayName);
-    str.append(": [ ");
+    str.append("[ ");
     for (auto &iter : _ArrayVector){
          str.append((iter)->toString());
          str.append(1, ',');
     }
-    str.append(1, ']');
+    str.pop_back();
+    str.append("]");
     return str;
 }
 
