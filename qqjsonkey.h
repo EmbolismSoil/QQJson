@@ -7,8 +7,8 @@ class QQJsonKey : public QQJsonX
 public:
     QQJsonKey(const std::string key);
     virtual QQJsonXType whichType() override;
-    virtual const std::string& toString() override;
-    const std::string &getKey(){return _Key;}
+    virtual const std::string toString() override;
+    const std::string &getKey(){return _key;}
 private:
     std::string _key;
 };

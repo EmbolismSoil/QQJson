@@ -10,16 +10,17 @@ QQJsonX::QQJsonXType QQJsonArray::whichType()
     return QQJsonX::QQJSON_ARRAY;
 }
 
-const std::string &QQJsonArray::toString()
+const std::string QQJsonArray::toString()
 {
     std::string str;
     str.append(_ArrayName);
     str.append(": [ ");
     for (auto &iter : _ArrayVector){
          str.append((iter)->toString());
-         str.append(',',1);
+         str.append(1, ',');
     }
-    str.append(']',1);
+    str.append(1, ']');
+    return str;
 }
 
 void QQJsonArray::addValue(std::shared_ptr<QQJsonX> ptr)

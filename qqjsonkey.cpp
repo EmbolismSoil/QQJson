@@ -11,7 +11,7 @@ QQJsonX::QQJsonXType QQJsonKey::whichType()
      return QQJsonX::QQJSON_KEY;
 }
 
-const std::string &QQJsonKey::toString()
+const std::string QQJsonKey::toString()
 {
      return _key;
 }

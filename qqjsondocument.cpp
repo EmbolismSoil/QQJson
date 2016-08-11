@@ -38,6 +38,10 @@ QQJsonDocument::Token QQJsonDocument::peekNextToken()
         return TOKEN_NUMER;
     else if (*_WorkerIter == 'n')
         return TOKEN_NULL;
+    else if (*_WorkerIter == '}')
+        return TOKEN_END_OBJECT;
+    else if (*_WorkerIter == ']')
+        return TOKEN_END_ARRAY;
     else
         return TOKEN_ERROR;
 }
@@ -74,6 +78,15 @@ std::string QQJsonDocument::readNull()
     std::string str(_WorkerIter, _WorkerIter + Null.length());
     _WorkerIter += Null.length();
     return str;
+}
+
+std::string QQJsonDocument::readNumber()
+{
+    std::string::iterator tmpIter = _WorkerIter;
+    for (; tmpIter != _Document.end() && (*tmpIter < '0' || *tmpIter > '9'); ++tmpIter);
+    std::string number(_WorkerIter, tmpIter+1);
+    _WorkerIter += number.length();
+    return number;
 }
 
 std::string QQJsonDocument::readComma()

@@ -9,7 +9,7 @@ public:
     virtual QQJsonXType whichType() override{
         return QQJsonX::QQJSON_STRING;
     }
-    virtual const std::string& toString() override{
+    virtual const std::string toString() override{
         return _String;
     }
 private:

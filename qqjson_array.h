@@ -11,7 +11,7 @@ class QQJsonArray : public QQJsonX
 public:
     QQJsonArray();
     virtual QQJsonX::QQJsonXType whichType() override;
-    virtual const std::string & toString() override;
+    virtual const std::string  toString() override;
     virtual void addValue(std::shared_ptr<QQJsonX> ptr);
 private:
     std::string _ArrayName;

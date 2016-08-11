@@ -12,7 +12,7 @@ public:
     QQJsonObject();
 
     virtual QQJsonX::QQJsonXType whichType() override;
-    virtual  const std::string &toString() override;
+    virtual  const std::string toString() override;
     virtual void addVaule(const std::string &key, std::shared_ptr<QQJsonX> value);
 private:
     std::map<std::string, std::shared_ptr<QQJsonX> > _ObjectMap;
