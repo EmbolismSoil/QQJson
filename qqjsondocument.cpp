@@ -73,7 +73,13 @@ std::string QQJsonDocument::readBoolen()
 std::string QQJsonDocument::readString()
 {
     std::string::iterator tmpIter = _WorkerIter+1;
-    for ( ; *tmpIter != '"'; ++tmpIter);
+    if (*tmpIter != '"'){
+        ++tmpIter;
+    }else{
+        _WorkerIter = tmpIter + 1;
+        return std::string("");
+    }
+    for ( ; *tmpIter != '"' || *(tmpIter - 1) == '\\' ; ++tmpIter);
 
     std::string str(_WorkerIter+1, tmpIter);
     _WorkerIter = tmpIter + 1;

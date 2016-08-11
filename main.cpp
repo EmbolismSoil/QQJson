@@ -60,9 +60,9 @@ int doExpectArrayValue(std::shared_ptr<T> ptr)
 int main(int argc, char *argv[])
 {
     //QQJsonDocument doc(std::string("{\"bool\":true, \"Object\" : {\"bool\": false, \"array\" : [1]}}"));
- //   if (argc != 2)
-    //    return 0;
-    std::ifstream t("test.json");
+    if (argc != 2)
+        return 0;
+    std::ifstream t(argv[1]);
     std::stringstream buffer;
     buffer << t.rdbuf();
     std::string contents(buffer.str());
