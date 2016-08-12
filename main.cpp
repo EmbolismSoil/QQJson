@@ -24,8 +24,8 @@ typedef enum{Start, Expect_Key, Expect_Value,
 std::stack<std::shared_ptr<QQJsonX> > Stack;
 
 template <class T>
-T* jsonConcrete_cast(std::shared_ptr<QQJsonX> Obj){
-    return dynamic_cast<T*>(Obj.get());
+std::shared_ptr<T> jsonConcrete_cast(std::shared_ptr<QQJsonX> Obj){
+    return std::dynamic_pointer_cast<T>(Obj);
 }
 
 int doExpectValue(std::shared_ptr<QQJsonX> ptr)
@@ -239,7 +239,7 @@ int main(int argc, char *argv[])
         }
     }
 FINISHED:
-    QQJsonObject *obj = static_cast<QQJsonObject*>(ret.get());
+    auto obj =  std::dynamic_pointer_cast<QQJsonObject>(ret);
     std::cout << obj->toString() << std::endl;
     return 0;
 }
