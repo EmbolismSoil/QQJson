@@ -1,0 +1,332 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AR	Makefile	/^AR            = ar cqs$/;"	m
+AbstractContext	AbstractContext.h	/^class AbstractContext{$/;"	c
+AbstractContext::_curState	AbstractContext.h	/^    statePtr _curState;$/;"	m	class:AbstractContext	access:private
+AbstractContext::getCurState	AbstractContext.h	/^    statePtr getCurState(void){$/;"	f	class:AbstractContext	access:protected	signature:(void)
+AbstractContext::setState	AbstractContext.h	/^    void setState(statePtr state){$/;"	f	class:AbstractContext	access:protected	signature:(statePtr state)
+AbstractState	AbstractState.h	/^class AbstractState{$/;"	c
+AbstractState::Expect_ArrayValue	AbstractState.h	/^                    Expect_Colon, Expect_ArrayValue,$/;"	e	enum:AbstractState::__anon2
+AbstractState::Expect_Colon	AbstractState.h	/^                    Expect_Colon, Expect_ArrayValue,$/;"	e	enum:AbstractState::__anon2
+AbstractState::Expect_CommaOrEnd	AbstractState.h	/^                   Expect_CommaOrEnd, Stack_Top_Check}STATE;$/;"	e	enum:AbstractState::__anon2
+AbstractState::Expect_Key	AbstractState.h	/^typedef enum{Start, Expect_Key, Expect_Value,$/;"	e	enum:AbstractState::__anon2
+AbstractState::Expect_Value	AbstractState.h	/^typedef enum{Start, Expect_Key, Expect_Value,$/;"	e	enum:AbstractState::__anon2
+AbstractState::STATE	AbstractState.h	/^                   Expect_CommaOrEnd, Stack_Top_Check}STATE;$/;"	t	class:AbstractState	typeref:enum:AbstractState::__anon2	access:public
+AbstractState::Stack_Top_Check	AbstractState.h	/^                   Expect_CommaOrEnd, Stack_Top_Check}STATE;$/;"	e	enum:AbstractState::__anon2
+AbstractState::Start	AbstractState.h	/^typedef enum{Start, Expect_Key, Expect_Value,$/;"	e	enum:AbstractState::__anon2
+AbstractState::handle	AbstractState.h	/^			handle(QQJsonDocument *doc) = 0;$/;"	p	class:AbstractState	access:public	signature:(QQJsonDocument *doc)
+Array	qqjson.h	/^    typedef  std::vector<std::string> Array;$/;"	t	class:QQJson	access:public
+CC	Makefile	/^CC            = gcc$/;"	m
+CFLAGS	Makefile	/^CFLAGS        = -m32 -pipe -O2 -Wall -W -D_REENTRANT -fPIC $(DEFINES)$/;"	m
+CHK_DIR_EXISTS	Makefile	/^CHK_DIR_EXISTS= test -d$/;"	m
+COMPRESS	Makefile	/^COMPRESS      = gzip -9f$/;"	m
+COPY	Makefile	/^COPY          = cp -f$/;"	m
+COPY_DIR	Makefile	/^COPY_DIR      = cp -f -R$/;"	m
+COPY_FILE	Makefile	/^COPY_FILE     = cp -f$/;"	m
+CXX	Makefile	/^CXX           = g++$/;"	m
+CXXFLAGS	Makefile	/^CXXFLAGS      = -m32 -pipe -O2 -std=c++0x -Wall -W -D_REENTRANT -fPIC $(DEFINES)$/;"	m
+DEFINES	Makefile	/^DEFINES       = -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB$/;"	m
+DEL_DIR	Makefile	/^DEL_DIR       = rmdir$/;"	m
+DEL_FILE	Makefile	/^DEL_FILE      = rm -f$/;"	m
+DESTDIR	Makefile	/^DESTDIR       = #avoid trailing-slash linebreak$/;"	m
+DIST	Makefile	/^DIST          = ..\/..\/Qt5.5.1\/5.5\/gcc\/mkspecs\/features\/spec_pre.prf \\$/;"	m
+DISTDIR	Makefile	/^DISTDIR = \/home\/lee\/github\/QQJson\/.tmp\/QQJson1.0.0$/;"	m
+DISTNAME	Makefile	/^DISTNAME      = QQJson1.0.0$/;"	m
+DirectoryOfThisScript	.ycm_extra_conf.py	/^def DirectoryOfThisScript():$/;"	f	access:public
+Expect_ArrayValue	AbstractState.h	/^                    Expect_Colon, Expect_ArrayValue,$/;"	e	enum:AbstractState::__anon2
+Expect_Colon	AbstractState.h	/^                    Expect_Colon, Expect_ArrayValue,$/;"	e	enum:AbstractState::__anon2
+Expect_CommaOrEnd	AbstractState.h	/^                   Expect_CommaOrEnd, Stack_Top_Check}STATE;$/;"	e	enum:AbstractState::__anon2
+Expect_Key	AbstractState.h	/^typedef enum{Start, Expect_Key, Expect_Value,$/;"	e	enum:AbstractState::__anon2
+Expect_Value	AbstractState.h	/^typedef enum{Start, Expect_Key, Expect_Value,$/;"	e	enum:AbstractState::__anon2
+FlagsForFile	.ycm_extra_conf.py	/^def FlagsForFile( filename, **kwargs ):$/;"	f	access:public
+GetCompilationInfoForFile	.ycm_extra_conf.py	/^def GetCompilationInfoForFile( filename ):$/;"	f	access:public
+INCPATH	Makefile	/^INCPATH       = -I. -I. -I..\/..\/Qt5.5.1\/5.5\/gcc\/include -I..\/..\/Qt5.5.1\/5.5\/gcc\/include\/QtGui -I..\/..\/Qt5.5.1\/5.5\/gcc\/include\/QtCore -I. -I..\/..\/Qt5.5.1\/5.5\/gcc\/mkspecs\/linux-g++-32$/;"	m
+INSTALL_DIR	Makefile	/^INSTALL_DIR   = cp -f -R$/;"	m
+INSTALL_FILE	Makefile	/^INSTALL_FILE  = install -m 644 -p$/;"	m
+INSTALL_PROGRAM	Makefile	/^INSTALL_PROGRAM = install -m 755 -p$/;"	m
+IsHeaderFile	.ycm_extra_conf.py	/^def IsHeaderFile( filename ):$/;"	f	access:public
+LFLAGS	Makefile	/^LFLAGS        = -m32 -Wl,-O1 -Wl,-rpath,\/home\/lee\/Qt5.5.1\/5.5\/gcc -Wl,-rpath,\/home\/lee\/Qt5.5.1\/5.5\/gcc\/lib$/;"	m
+LIBS	Makefile	/^LIBS          = $(SUBLIBS) -L\/home\/lee\/Qt5.5.1\/5.5\/gcc\/lib -lQt5Gui -lQt5Core -lGL -lpthread $/;"	m
+LINK	Makefile	/^LINK          = g++$/;"	m
+MAKEFILE	Makefile	/^MAKEFILE      = Makefile$/;"	m
+MKDIR	Makefile	/^MKDIR         = mkdir -p$/;"	m
+MOVE	Makefile	/^MOVE          = mv -f$/;"	m
+MakeRelativePathsInFlagsAbsolute	.ycm_extra_conf.py	/^def MakeRelativePathsInFlagsAbsolute( flags, working_directory ):$/;"	f	access:public
+OBJECTS	Makefile	/^OBJECTS       = AbstractContext.o \\$/;"	m
+OBJECTS_DIR	Makefile	/^OBJECTS_DIR   = .\/$/;"	m
+Object	qqjson.h	/^    typedef  std::map<std::string ,std::string> Object;$/;"	t	class:QQJson	access:public
+Parse	qqjson.cpp	/^void QQJson::Parse()$/;"	f	class:QQJson	signature:()
+Parse	qqjson.h	/^    void Parse();$/;"	p	class:QQJson	access:public	signature:()
+QMAKE	Makefile	/^QMAKE         = \/usr\/bin\/qmake$/;"	m
+QMAKE_TARGET	Makefile	/^QMAKE_TARGET  = QQJson$/;"	m
+QQJSONBOOLEN_H	qqjson_boolen.h	2;"	d
+QQJSONDOCUMENT_H	qqjsondocument.h	2;"	d
+QQJSONKEY_H	qqjsonkey.h	2;"	d
+QQJSONNULL_H	qqjson_null.h	2;"	d
+QQJSONNUMBER_H	qqjson_number.h	2;"	d
+QQJSONSTRING_H	qqjsonstring.h	2;"	d
+QQJSONX_H	qqjsonx.h	2;"	d
+QQJSON_ARRAY	qqjsonx.h	/^        QQJSON_ARRAY, QQJSON_OBJECT, QQJSON_VALUE,$/;"	e	enum:QQJsonX::__anon1
+QQJSON_ARRAY_H	qqjson_array.h	2;"	d
+QQJSON_BOOLEN	qqjsonx.h	/^        QQJSON_KEY,QQJSON_STRING, QQJSON_BOOLEN,$/;"	e	enum:QQJsonX::__anon1
+QQJSON_H	qqjson.h	2;"	d
+QQJSON_KEY	qqjsonx.h	/^        QQJSON_KEY,QQJSON_STRING, QQJSON_BOOLEN,$/;"	e	enum:QQJsonX::__anon1
+QQJSON_NULL	qqjsonx.h	/^        QQJSON_NULL,QQJSON_NUMBER$/;"	e	enum:QQJsonX::__anon1
+QQJSON_NUMBER	qqjsonx.h	/^        QQJSON_NULL,QQJSON_NUMBER$/;"	e	enum:QQJsonX::__anon1
+QQJSON_OBJECT	qqjsonx.h	/^        QQJSON_ARRAY, QQJSON_OBJECT, QQJSON_VALUE,$/;"	e	enum:QQJsonX::__anon1
+QQJSON_OBJECT_H	qqjson_object.h	2;"	d
+QQJSON_STRING	qqjsonx.h	/^        QQJSON_KEY,QQJSON_STRING, QQJSON_BOOLEN,$/;"	e	enum:QQJsonX::__anon1
+QQJSON_VALUE	qqjsonx.h	/^        QQJSON_ARRAY, QQJSON_OBJECT, QQJSON_VALUE,$/;"	e	enum:QQJsonX::__anon1
+QQJson	qqjson.cpp	/^QQJson::QQJson(const std::string &str):$/;"	f	class:QQJson	signature:(const std::string &str)
+QQJson	qqjson.h	/^    QQJson(const QQJson &) = delete;$/;"	p	class:QQJson	access:public	signature:(const QQJson &)
+QQJson	qqjson.h	/^    QQJson(const std::string &str);$/;"	p	class:QQJson	access:public	signature:(const std::string &str)
+QQJson	qqjson.h	/^class QQJson$/;"	c
+QQJson::Array	qqjson.h	/^    typedef  std::vector<std::string> Array;$/;"	t	class:QQJson	access:public
+QQJson::Object	qqjson.h	/^    typedef  std::map<std::string ,std::string> Object;$/;"	t	class:QQJson	access:public
+QQJson::Parse	qqjson.cpp	/^void QQJson::Parse()$/;"	f	class:QQJson	signature:()
+QQJson::Parse	qqjson.h	/^    void Parse();$/;"	p	class:QQJson	access:public	signature:()
+QQJson::QQJson	qqjson.cpp	/^QQJson::QQJson(const std::string &str):$/;"	f	class:QQJson	signature:(const std::string &str)
+QQJson::QQJson	qqjson.h	/^    QQJson(const QQJson &) = delete;$/;"	p	class:QQJson	access:public	signature:(const QQJson &)
+QQJson::QQJson	qqjson.h	/^    QQJson(const std::string &str);$/;"	p	class:QQJson	access:public	signature:(const std::string &str)
+QQJson::_Document	qqjson.h	/^    QQJsonDocument _Document;$/;"	m	class:QQJson	access:private
+QQJson::_ParseStack	qqjson.h	/^    std::stack<std::shared_ptr<QQJsonX> > _ParseStack;$/;"	m	class:QQJson	access:private
+QQJsonArray	qqjson_array.cpp	/^QQJsonArray::QQJsonArray()$/;"	f	class:QQJsonArray	signature:()
+QQJsonArray	qqjson_array.h	/^    QQJsonArray();$/;"	p	class:QQJsonArray	access:public	signature:()
+QQJsonArray	qqjson_array.h	/^class QQJsonArray : public QQJsonX$/;"	c	inherits:QQJsonX
+QQJsonArray::QQJsonArray	qqjson_array.cpp	/^QQJsonArray::QQJsonArray()$/;"	f	class:QQJsonArray	signature:()
+QQJsonArray::QQJsonArray	qqjson_array.h	/^    QQJsonArray();$/;"	p	class:QQJsonArray	access:public	signature:()
+QQJsonArray::_ArrayName	qqjson_array.h	/^    std::string _ArrayName;$/;"	m	class:QQJsonArray	access:private
+QQJsonArray::_ArrayVector	qqjson_array.h	/^    std::vector<std::shared_ptr<QQJsonX> >  _ArrayVector;$/;"	m	class:QQJsonArray	access:private
+QQJsonArray::addValue	qqjson_array.cpp	/^void QQJsonArray::addValue(std::shared_ptr<QQJsonX> ptr)$/;"	f	class:QQJsonArray	signature:(std::shared_ptr<QQJsonX> ptr)
+QQJsonArray::addValue	qqjson_array.h	/^    virtual void addValue(std::shared_ptr<QQJsonX> ptr);$/;"	p	class:QQJsonArray	access:public	signature:(std::shared_ptr<QQJsonX> ptr)
+QQJsonArray::operator []	qqjson_array.h	/^    std::shared_ptr<QQJsonX> operator[](const uint32_t index)$/;"	f	class:QQJsonArray	access:public	signature:(const uint32_t index)
+QQJsonArray::override	qqjson_array.h	/^    virtual QQJsonX::QQJsonXType whichType() override;$/;"	m	class:QQJsonArray	access:public
+QQJsonArray::override	qqjson_array.h	/^    virtual const std::string  toString() override;$/;"	m	class:QQJsonArray	access:public
+QQJsonArray::toString	qqjson_array.cpp	/^const std::string QQJsonArray::toString()$/;"	f	class:QQJsonArray	signature:()
+QQJsonArray::whichType	qqjson_array.cpp	/^QQJsonX::QQJsonXType QQJsonArray::whichType()$/;"	f	class:QQJsonArray	signature:()
+QQJsonBoolen	qqjson_boolen.h	/^    QQJsonBoolen(std::string const &Boolen) : _Boolen(Boolen){  }$/;"	f	class:QQJsonBoolen	access:public	signature:(std::string const &Boolen)
+QQJsonBoolen	qqjson_boolen.h	/^class QQJsonBoolen : public QQJsonX$/;"	c	inherits:QQJsonX
+QQJsonBoolen::QQJsonBoolen	qqjson_boolen.h	/^    QQJsonBoolen(std::string const &Boolen) : _Boolen(Boolen){  }$/;"	f	class:QQJsonBoolen	access:public	signature:(std::string const &Boolen)
+QQJsonBoolen::_Boolen	qqjson_boolen.h	/^    std::string _Boolen;$/;"	m	class:QQJsonBoolen	access:private
+QQJsonBoolen::override	qqjson_boolen.h	/^    virtual QQJsonX::QQJsonXType whichType() override;$/;"	m	class:QQJsonBoolen	access:public
+QQJsonBoolen::override	qqjson_boolen.h	/^    virtual const std::string  toString() override;$/;"	m	class:QQJsonBoolen	access:public
+QQJsonBoolen::toString	qqjson_boolen.cpp	/^const std::string QQJsonBoolen::toString()$/;"	f	class:QQJsonBoolen	signature:()
+QQJsonBoolen::whichType	qqjson_boolen.cpp	/^QQJsonX::QQJsonXType QQJsonBoolen::whichType()$/;"	f	class:QQJsonBoolen	signature:()
+QQJsonContext	QQJsonContext.h	/^    QQJsonContext():_stateMap(){}$/;"	f	class:QQJsonContext	access:public	signature:()
+QQJsonContext	QQJsonContext.h	/^class QQJsonContext: public AbstractContext{$/;"	c	inherits:AbstractContext
+QQJsonContext::QQJsonContext	QQJsonContext.h	/^    QQJsonContext():_stateMap(){}$/;"	f	class:QQJsonContext	access:public	signature:()
+QQJsonContext::_stateMap	QQJsonContext.h	/^    stateMap_Type _stateMap;$/;"	m	class:QQJsonContext	access:private
+QQJsonContext::getState	QQJsonContext.h	/^    AbstractContext::statePtr getState(AbstractState::STATE state){$/;"	f	class:QQJsonContext	access:public	signature:(AbstractState::STATE state)
+QQJsonContext::override	QQJsonContext.h	/^    ErrorCode_Type request(QQJsonDocument *doc) override;$/;"	m	class:QQJsonContext	access:public
+QQJsonContext::request	QQJsonContext.cpp	/^   QQJsonContext::request(QQJsonDocument *doc)$/;"	f	class:QQJsonContext	signature:(QQJsonDocument *doc)
+QQJsonDocument	qqjsondocument.cpp	/^QQJsonDocument::QQJsonDocument(const std::string &str):$/;"	f	class:QQJsonDocument	signature:(const std::string &str)
+QQJsonDocument	qqjsondocument.cpp	/^QQJsonDocument::QQJsonDocument(std::string &&str):$/;"	f	class:QQJsonDocument	signature:(std::string &&str)
+QQJsonDocument	qqjsondocument.h	/^    QQJsonDocument(const std::string &);$/;"	p	class:QQJsonDocument	access:public	signature:(const std::string &)
+QQJsonDocument	qqjsondocument.h	/^    QQJsonDocument(std::string &&);$/;"	p	class:QQJsonDocument	access:public	signature:(std::string &&)
+QQJsonDocument	qqjsondocument.h	/^class QQJsonDocument$/;"	c
+QQJsonDocument::QQJsonDocument	qqjsondocument.cpp	/^QQJsonDocument::QQJsonDocument(const std::string &str):$/;"	f	class:QQJsonDocument	signature:(const std::string &str)
+QQJsonDocument::QQJsonDocument	qqjsondocument.cpp	/^QQJsonDocument::QQJsonDocument(std::string &&str):$/;"	f	class:QQJsonDocument	signature:(std::string &&str)
+QQJsonDocument::QQJsonDocument	qqjsondocument.h	/^    QQJsonDocument(const std::string &);$/;"	p	class:QQJsonDocument	access:public	signature:(const std::string &)
+QQJsonDocument::QQJsonDocument	qqjsondocument.h	/^    QQJsonDocument(std::string &&);$/;"	p	class:QQJsonDocument	access:public	signature:(std::string &&)
+QQJsonDocument::TOKEN_BEGIN_ARRAY	qqjsondocument.h	/^        TOKEN_END_OBJECT, TOKEN_BEGIN_ARRAY,$/;"	e	enum:QQJsonDocument::__anon3
+QQJsonDocument::TOKEN_BEGIN_OBECT	qqjsondocument.h	/^        \/*TOKEN_DOC_END, *\/TOKEN_BEGIN_OBECT,$/;"	e	enum:QQJsonDocument::__anon3
+QQJsonDocument::TOKEN_BOOLEN	qqjsondocument.h	/^        TOKEN_STRING, TOKEN_BOOLEN, TOKEN_NUMER,$/;"	e	enum:QQJsonDocument::__anon3
+QQJsonDocument::TOKEN_COLON	qqjsondocument.h	/^        TOKEN_END_ARRAY, TOKEN_COLON, TOKEN_COMMA,$/;"	e	enum:QQJsonDocument::__anon3
+QQJsonDocument::TOKEN_COMMA	qqjsondocument.h	/^        TOKEN_END_ARRAY, TOKEN_COLON, TOKEN_COMMA,$/;"	e	enum:QQJsonDocument::__anon3
+QQJsonDocument::TOKEN_END_ARRAY	qqjsondocument.h	/^        TOKEN_END_ARRAY, TOKEN_COLON, TOKEN_COMMA,$/;"	e	enum:QQJsonDocument::__anon3
+QQJsonDocument::TOKEN_END_OBJECT	qqjsondocument.h	/^        TOKEN_END_OBJECT, TOKEN_BEGIN_ARRAY,$/;"	e	enum:QQJsonDocument::__anon3
+QQJsonDocument::TOKEN_ERROR	qqjsondocument.h	/^        TOKEN_NULL, TOKEN_ERROR,$/;"	e	enum:QQJsonDocument::__anon3
+QQJsonDocument::TOKEN_NULL	qqjsondocument.h	/^        TOKEN_NULL, TOKEN_ERROR,$/;"	e	enum:QQJsonDocument::__anon3
+QQJsonDocument::TOKEN_NUMER	qqjsondocument.h	/^        TOKEN_STRING, TOKEN_BOOLEN, TOKEN_NUMER,$/;"	e	enum:QQJsonDocument::__anon3
+QQJsonDocument::TOKEN_STRING	qqjsondocument.h	/^        TOKEN_STRING, TOKEN_BOOLEN, TOKEN_NUMER,$/;"	e	enum:QQJsonDocument::__anon3
+QQJsonDocument::Token	qqjsondocument.h	/^    }Token;$/;"	t	class:QQJsonDocument	typeref:enum:QQJsonDocument::__anon3	access:public
+QQJsonDocument::_BeginDocumentIter	qqjsondocument.h	/^   std::string::iterator _BeginDocumentIter;$/;"	m	class:QQJsonDocument	access:private
+QQJsonDocument::_Document	qqjsondocument.h	/^   std::string _Document;$/;"	m	class:QQJsonDocument	access:private
+QQJsonDocument::_EndDocumentIter	qqjsondocument.h	/^   std::string::iterator _EndDocumentIter;$/;"	m	class:QQJsonDocument	access:private
+QQJsonDocument::_WorkerIter	qqjsondocument.h	/^   std::string::iterator _WorkerIter;$/;"	m	class:QQJsonDocument	access:private
+QQJsonDocument::peekNextToken	qqjsondocument.cpp	/^QQJsonDocument::Token QQJsonDocument::peekNextToken()$/;"	f	class:QQJsonDocument	signature:()
+QQJsonDocument::peekNextToken	qqjsondocument.h	/^    Token peekNextToken();$/;"	p	class:QQJsonDocument	access:public	signature:()
+QQJsonDocument::popToken	qqjsondocument.h	/^    void popToken();$/;"	p	class:QQJsonDocument	access:public	signature:()
+QQJsonDocument::readAToken	qqjsondocument.cpp	/^std::string QQJsonDocument::readAToken()$/;"	f	class:QQJsonDocument	signature:()
+QQJsonDocument::readAToken	qqjsondocument.h	/^   std::string readAToken();$/;"	p	class:QQJsonDocument	access:public	signature:()
+QQJsonDocument::readBoolen	qqjsondocument.cpp	/^std::string QQJsonDocument::readBoolen()$/;"	f	class:QQJsonDocument	signature:()
+QQJsonDocument::readBoolen	qqjsondocument.h	/^    std::string readBoolen();$/;"	p	class:QQJsonDocument	access:public	signature:()
+QQJsonDocument::readColon	qqjsondocument.cpp	/^std::string QQJsonDocument::readColon()$/;"	f	class:QQJsonDocument	signature:()
+QQJsonDocument::readColon	qqjsondocument.h	/^    std::string readColon();$/;"	p	class:QQJsonDocument	access:public	signature:()
+QQJsonDocument::readComma	qqjsondocument.cpp	/^std::string QQJsonDocument::readComma()$/;"	f	class:QQJsonDocument	signature:()
+QQJsonDocument::readComma	qqjsondocument.h	/^    std::string readComma();$/;"	p	class:QQJsonDocument	access:public	signature:()
+QQJsonDocument::readNull	qqjsondocument.cpp	/^std::string QQJsonDocument::readNull()$/;"	f	class:QQJsonDocument	signature:()
+QQJsonDocument::readNull	qqjsondocument.h	/^    std::string readNull();$/;"	p	class:QQJsonDocument	access:public	signature:()
+QQJsonDocument::readNumber	qqjsondocument.cpp	/^std::string QQJsonDocument::readNumber()$/;"	f	class:QQJsonDocument	signature:()
+QQJsonDocument::readNumber	qqjsondocument.h	/^    std::string readNumber();$/;"	p	class:QQJsonDocument	access:public	signature:()
+QQJsonDocument::readString	qqjsondocument.cpp	/^std::string QQJsonDocument::readString()$/;"	f	class:QQJsonDocument	signature:()
+QQJsonDocument::readString	qqjsondocument.h	/^    std::string readString();$/;"	p	class:QQJsonDocument	access:public	signature:()
+QQJsonKey	qqjsonkey.cpp	/^QQJsonKey::QQJsonKey(const std::string key):$/;"	f	class:QQJsonKey	signature:(const std::string key)
+QQJsonKey	qqjsonkey.h	/^    QQJsonKey(const std::string key);$/;"	p	class:QQJsonKey	access:public	signature:(const std::string key)
+QQJsonKey	qqjsonkey.h	/^class QQJsonKey : public QQJsonX$/;"	c	inherits:QQJsonX
+QQJsonKey::QQJsonKey	qqjsonkey.cpp	/^QQJsonKey::QQJsonKey(const std::string key):$/;"	f	class:QQJsonKey	signature:(const std::string key)
+QQJsonKey::QQJsonKey	qqjsonkey.h	/^    QQJsonKey(const std::string key);$/;"	p	class:QQJsonKey	access:public	signature:(const std::string key)
+QQJsonKey::_key	qqjsonkey.h	/^    std::string _key;$/;"	m	class:QQJsonKey	access:private
+QQJsonKey::getKey	qqjsonkey.h	/^    const std::string &getKey(){return _key;}$/;"	f	class:QQJsonKey	access:public	signature:()
+QQJsonKey::override	qqjsonkey.h	/^    virtual QQJsonXType whichType() override;$/;"	m	class:QQJsonKey	access:public
+QQJsonKey::override	qqjsonkey.h	/^    virtual const std::string toString() override;$/;"	m	class:QQJsonKey	access:public
+QQJsonKey::toString	qqjsonkey.cpp	/^const std::string QQJsonKey::toString()$/;"	f	class:QQJsonKey	signature:()
+QQJsonKey::whichType	qqjsonkey.cpp	/^QQJsonX::QQJsonXType QQJsonKey::whichType()$/;"	f	class:QQJsonKey	signature:()
+QQJsonNull	qqjson_null.cpp	/^QQJsonNull::QQJsonNull()$/;"	f	class:QQJsonNull	signature:()
+QQJsonNull	qqjson_null.h	/^    QQJsonNull();$/;"	p	class:QQJsonNull	access:public	signature:()
+QQJsonNull	qqjson_null.h	/^class QQJsonNull : public QQJsonX$/;"	c	inherits:QQJsonX
+QQJsonNull::QQJsonNull	qqjson_null.cpp	/^QQJsonNull::QQJsonNull()$/;"	f	class:QQJsonNull	signature:()
+QQJsonNull::QQJsonNull	qqjson_null.h	/^    QQJsonNull();$/;"	p	class:QQJsonNull	access:public	signature:()
+QQJsonNull::override	qqjson_null.h	/^    virtual QQJsonX::QQJsonXType whichType() override;$/;"	m	class:QQJsonNull	access:public
+QQJsonNull::override	qqjson_null.h	/^    virtual const std::string  toString() override;$/;"	m	class:QQJsonNull	access:public
+QQJsonNull::toString	qqjson_null.cpp	/^const std::string QQJsonNull::toString()$/;"	f	class:QQJsonNull	signature:()
+QQJsonNull::whichType	qqjson_null.cpp	/^QQJsonX::QQJsonXType QQJsonNull::whichType()$/;"	f	class:QQJsonNull	signature:()
+QQJsonNumber	qqjson_number.cpp	/^QQJsonNumber::QQJsonNumber()$/;"	f	class:QQJsonNumber	signature:()
+QQJsonNumber	qqjson_number.h	/^    QQJsonNumber();$/;"	p	class:QQJsonNumber	access:public	signature:()
+QQJsonNumber	qqjson_number.h	/^    QQJsonNumber(std::string const&  str) : _number(str){}$/;"	f	class:QQJsonNumber	access:public	signature:(std::string const& str)
+QQJsonNumber	qqjson_number.h	/^class QQJsonNumber : public QQJsonX$/;"	c	inherits:QQJsonX
+QQJsonNumber::QQJsonNumber	qqjson_number.cpp	/^QQJsonNumber::QQJsonNumber()$/;"	f	class:QQJsonNumber	signature:()
+QQJsonNumber::QQJsonNumber	qqjson_number.h	/^    QQJsonNumber();$/;"	p	class:QQJsonNumber	access:public	signature:()
+QQJsonNumber::QQJsonNumber	qqjson_number.h	/^    QQJsonNumber(std::string const&  str) : _number(str){}$/;"	f	class:QQJsonNumber	access:public	signature:(std::string const& str)
+QQJsonNumber::_number	qqjson_number.h	/^    std::string _number;$/;"	m	class:QQJsonNumber	access:private
+QQJsonNumber::override	qqjson_number.h	/^    virtual QQJsonX::QQJsonXType whichType() override;$/;"	m	class:QQJsonNumber	access:public
+QQJsonNumber::override	qqjson_number.h	/^    virtual const std::string  toString() override;$/;"	m	class:QQJsonNumber	access:public
+QQJsonNumber::toString	qqjson_number.cpp	/^const std::string QQJsonNumber::toString()$/;"	f	class:QQJsonNumber	signature:()
+QQJsonNumber::whichType	qqjson_number.cpp	/^QQJsonX::QQJsonXType QQJsonNumber::whichType()$/;"	f	class:QQJsonNumber	signature:()
+QQJsonObject	qqjson_object.cpp	/^QQJsonObject::QQJsonObject()$/;"	f	class:QQJsonObject	signature:()
+QQJsonObject	qqjson_object.h	/^    QQJsonObject();$/;"	p	class:QQJsonObject	access:public	signature:()
+QQJsonObject	qqjson_object.h	/^class QQJsonObject : public QQJsonX$/;"	c	inherits:QQJsonX
+QQJsonObject::QQJsonObject	qqjson_object.cpp	/^QQJsonObject::QQJsonObject()$/;"	f	class:QQJsonObject	signature:()
+QQJsonObject::QQJsonObject	qqjson_object.h	/^    QQJsonObject();$/;"	p	class:QQJsonObject	access:public	signature:()
+QQJsonObject::_ObjectMap	qqjson_object.h	/^    std::map<std::string, std::shared_ptr<QQJsonX> > _ObjectMap;$/;"	m	class:QQJsonObject	access:private
+QQJsonObject::addVaule	qqjson_object.cpp	/^void QQJsonObject::addVaule(const std::string &key, std::shared_ptr<QQJsonX> value)$/;"	f	class:QQJsonObject	signature:(const std::string &key, std::shared_ptr<QQJsonX> value)
+QQJsonObject::addVaule	qqjson_object.h	/^    virtual void addVaule(const std::string &key, std::shared_ptr<QQJsonX> value);$/;"	p	class:QQJsonObject	access:public	signature:(const std::string &key, std::shared_ptr<QQJsonX> value)
+QQJsonObject::operator []	qqjson_object.h	/^    std::shared_ptr<QQJsonX> operator[](const std::string index)$/;"	f	class:QQJsonObject	access:public	signature:(const std::string index)
+QQJsonObject::override	qqjson_object.h	/^    virtual  const std::string toString() override;$/;"	m	class:QQJsonObject	access:public
+QQJsonObject::override	qqjson_object.h	/^    virtual QQJsonX::QQJsonXType whichType() override;$/;"	m	class:QQJsonObject	access:public
+QQJsonObject::toString	qqjson_object.cpp	/^const std::string QQJsonObject::toString()$/;"	f	class:QQJsonObject	signature:()
+QQJsonObject::whichType	qqjson_object.cpp	/^QQJsonX::QQJsonXType QQJsonObject::whichType()$/;"	f	class:QQJsonObject	signature:()
+QQJsonString	qqjsonstring.h	/^    QQJsonString(const std::string &str):_String(str){}$/;"	f	class:QQJsonString	access:public	signature:(const std::string &str)
+QQJsonString	qqjsonstring.h	/^class QQJsonString : public QQJsonX$/;"	c	inherits:QQJsonX
+QQJsonString::QQJsonString	qqjsonstring.h	/^    QQJsonString(const std::string &str):_String(str){}$/;"	f	class:QQJsonString	access:public	signature:(const std::string &str)
+QQJsonString::_String	qqjsonstring.h	/^    std::string _String;$/;"	m	class:QQJsonString	access:private
+QQJsonX	qqjsonx.h	/^class QQJsonX$/;"	c
+QQJsonX::QQJSON_ARRAY	qqjsonx.h	/^        QQJSON_ARRAY, QQJSON_OBJECT, QQJSON_VALUE,$/;"	e	enum:QQJsonX::__anon1
+QQJsonX::QQJSON_BOOLEN	qqjsonx.h	/^        QQJSON_KEY,QQJSON_STRING, QQJSON_BOOLEN,$/;"	e	enum:QQJsonX::__anon1
+QQJsonX::QQJSON_KEY	qqjsonx.h	/^        QQJSON_KEY,QQJSON_STRING, QQJSON_BOOLEN,$/;"	e	enum:QQJsonX::__anon1
+QQJsonX::QQJSON_NULL	qqjsonx.h	/^        QQJSON_NULL,QQJSON_NUMBER$/;"	e	enum:QQJsonX::__anon1
+QQJsonX::QQJSON_NUMBER	qqjsonx.h	/^        QQJSON_NULL,QQJSON_NUMBER$/;"	e	enum:QQJsonX::__anon1
+QQJsonX::QQJSON_OBJECT	qqjsonx.h	/^        QQJSON_ARRAY, QQJSON_OBJECT, QQJSON_VALUE,$/;"	e	enum:QQJsonX::__anon1
+QQJsonX::QQJSON_STRING	qqjsonx.h	/^        QQJSON_KEY,QQJSON_STRING, QQJSON_BOOLEN,$/;"	e	enum:QQJsonX::__anon1
+QQJsonX::QQJSON_VALUE	qqjsonx.h	/^        QQJSON_ARRAY, QQJSON_OBJECT, QQJSON_VALUE,$/;"	e	enum:QQJsonX::__anon1
+QQJsonX::QQJsonXType	qqjsonx.h	/^    }QQJsonXType;$/;"	t	class:QQJsonX	typeref:enum:QQJsonX::__anon1	access:public
+QQJsonX::toString	qqjsonx.h	/^    virtual const std::string toString() = 0;$/;"	p	class:QQJsonX	access:public	signature:()
+QQJsonX::whichType	qqjsonx.h	/^    virtual QQJsonXType whichType() = 0;$/;"	p	class:QQJsonX	access:public	signature:()
+QQJsonXType	qqjsonx.h	/^    }QQJsonXType;$/;"	t	class:QQJsonX	typeref:enum:QQJsonX::__anon1	access:public
+RANLIB	Makefile	/^RANLIB        = $/;"	m
+SED	Makefile	/^SED           = sed$/;"	m
+SOURCES	Makefile	/^SOURCES       = AbstractContext.cpp \\$/;"	m
+SOURCE_EXTENSIONS	.ycm_extra_conf.py	/^SOURCE_EXTENSIONS = [ '.cpp', '.cxx', '.cc', '.c', '.m', '.mm' ]$/;"	v
+STATE	AbstractState.h	/^                   Expect_CommaOrEnd, Stack_Top_Check}STATE;$/;"	t	class:AbstractState	typeref:enum:AbstractState::__anon2	access:public
+STRIP	Makefile	/^STRIP         = strip$/;"	m
+SYMLINK	Makefile	/^SYMLINK       = ln -f -s$/;"	m
+Stack	main.cpp	/^std::stack<std::shared_ptr<QQJsonX> > Stack;$/;"	v
+Stack_Top_Check	AbstractState.h	/^                   Expect_CommaOrEnd, Stack_Top_Check}STATE;$/;"	e	enum:AbstractState::__anon2
+Start	AbstractState.h	/^typedef enum{Start, Expect_Key, Expect_Value,$/;"	e	enum:AbstractState::__anon2
+TAR	Makefile	/^TAR           = tar -cf$/;"	m
+TARGET	Makefile	/^TARGET        = QQJson$/;"	m
+TOKEN_BEGIN_ARRAY	qqjsondocument.h	/^        TOKEN_END_OBJECT, TOKEN_BEGIN_ARRAY,$/;"	e	enum:QQJsonDocument::__anon3
+TOKEN_BEGIN_OBECT	qqjsondocument.h	/^        \/*TOKEN_DOC_END, *\/TOKEN_BEGIN_OBECT,$/;"	e	enum:QQJsonDocument::__anon3
+TOKEN_BOOLEN	qqjsondocument.h	/^        TOKEN_STRING, TOKEN_BOOLEN, TOKEN_NUMER,$/;"	e	enum:QQJsonDocument::__anon3
+TOKEN_COLON	qqjsondocument.h	/^        TOKEN_END_ARRAY, TOKEN_COLON, TOKEN_COMMA,$/;"	e	enum:QQJsonDocument::__anon3
+TOKEN_COMMA	qqjsondocument.h	/^        TOKEN_END_ARRAY, TOKEN_COLON, TOKEN_COMMA,$/;"	e	enum:QQJsonDocument::__anon3
+TOKEN_END_ARRAY	qqjsondocument.h	/^        TOKEN_END_ARRAY, TOKEN_COLON, TOKEN_COMMA,$/;"	e	enum:QQJsonDocument::__anon3
+TOKEN_END_OBJECT	qqjsondocument.h	/^        TOKEN_END_OBJECT, TOKEN_BEGIN_ARRAY,$/;"	e	enum:QQJsonDocument::__anon3
+TOKEN_ERROR	qqjsondocument.h	/^        TOKEN_NULL, TOKEN_ERROR,$/;"	e	enum:QQJsonDocument::__anon3
+TOKEN_NULL	qqjsondocument.h	/^        TOKEN_NULL, TOKEN_ERROR,$/;"	e	enum:QQJsonDocument::__anon3
+TOKEN_NUMER	qqjsondocument.h	/^        TOKEN_STRING, TOKEN_BOOLEN, TOKEN_NUMER,$/;"	e	enum:QQJsonDocument::__anon3
+TOKEN_STRING	qqjsondocument.h	/^        TOKEN_STRING, TOKEN_BOOLEN, TOKEN_NUMER,$/;"	e	enum:QQJsonDocument::__anon3
+Token	qqjsondocument.h	/^    }Token;$/;"	t	class:QQJsonDocument	typeref:enum:QQJsonDocument::__anon3	access:public
+_ArrayName	qqjson_array.h	/^    std::string _ArrayName;$/;"	m	class:QQJsonArray	access:private
+_ArrayVector	qqjson_array.h	/^    std::vector<std::shared_ptr<QQJsonX> >  _ArrayVector;$/;"	m	class:QQJsonArray	access:private
+_BeginDocumentIter	qqjsondocument.h	/^   std::string::iterator _BeginDocumentIter;$/;"	m	class:QQJsonDocument	access:private
+_Boolen	qqjson_boolen.h	/^    std::string _Boolen;$/;"	m	class:QQJsonBoolen	access:private
+_Document	qqjson.h	/^    QQJsonDocument _Document;$/;"	m	class:QQJson	access:private
+_Document	qqjsondocument.h	/^   std::string _Document;$/;"	m	class:QQJsonDocument	access:private
+_EndDocumentIter	qqjsondocument.h	/^   std::string::iterator _EndDocumentIter;$/;"	m	class:QQJsonDocument	access:private
+_ObjectMap	qqjson_object.h	/^    std::map<std::string, std::shared_ptr<QQJsonX> > _ObjectMap;$/;"	m	class:QQJsonObject	access:private
+_ParseStack	qqjson.h	/^    std::stack<std::shared_ptr<QQJsonX> > _ParseStack;$/;"	m	class:QQJson	access:private
+_String	qqjsonstring.h	/^    std::string _String;$/;"	m	class:QQJsonString	access:private
+_WorkerIter	qqjsondocument.h	/^   std::string::iterator _WorkerIter;$/;"	m	class:QQJsonDocument	access:private
+_curState	AbstractContext.h	/^    statePtr _curState;$/;"	m	class:AbstractContext	access:private
+_key	qqjsonkey.h	/^    std::string _key;$/;"	m	class:QQJsonKey	access:private
+_number	qqjson_number.h	/^    std::string _number;$/;"	m	class:QQJsonNumber	access:private
+_stateMap	QQJsonContext.h	/^    stateMap_Type _stateMap;$/;"	m	class:QQJsonContext	access:private
+addValue	qqjson_array.cpp	/^void QQJsonArray::addValue(std::shared_ptr<QQJsonX> ptr)$/;"	f	class:QQJsonArray	signature:(std::shared_ptr<QQJsonX> ptr)
+addValue	qqjson_array.h	/^    virtual void addValue(std::shared_ptr<QQJsonX> ptr);$/;"	p	class:QQJsonArray	access:public	signature:(std::shared_ptr<QQJsonX> ptr)
+addVaule	qqjson_object.cpp	/^void QQJsonObject::addVaule(const std::string &key, std::shared_ptr<QQJsonX> value)$/;"	f	class:QQJsonObject	signature:(const std::string &key, std::shared_ptr<QQJsonX> value)
+addVaule	qqjson_object.h	/^    virtual void addVaule(const std::string &key, std::shared_ptr<QQJsonX> value);$/;"	p	class:QQJsonObject	access:public	signature:(const std::string &key, std::shared_ptr<QQJsonX> value)
+compilation_database_folder	.ycm_extra_conf.py	/^compilation_database_folder = ''$/;"	v
+database	.ycm_extra_conf.py	/^  database = None$/;"	v
+database	.ycm_extra_conf.py	/^  database = ycm_core.CompilationDatabase( compilation_database_folder )$/;"	v
+doExpectArrayValue	main.cpp	/^int doExpectArrayValue(std::shared_ptr<T> ptr)$/;"	f	signature:(std::shared_ptr<T> ptr)
+doExpectValue	main.cpp	/^int doExpectValue(std::shared_ptr<QQJsonX> ptr)$/;"	f	signature:(std::shared_ptr<QQJsonX> ptr)
+flags	.ycm_extra_conf.py	/^flags = [$/;"	v
+getCurState	AbstractContext.h	/^    statePtr getCurState(void){$/;"	f	class:AbstractContext	access:protected	signature:(void)
+getKey	qqjsonkey.h	/^    const std::string &getKey(){return _key;}$/;"	f	class:QQJsonKey	access:public	signature:()
+getState	QQJsonContext.h	/^    AbstractContext::statePtr getState(AbstractState::STATE state){$/;"	f	class:QQJsonContext	access:public	signature:(AbstractState::STATE state)
+handle	AbstractState.h	/^			handle(QQJsonDocument *doc) = 0;$/;"	p	class:AbstractState	access:public	signature:(QQJsonDocument *doc)
+jsonConcrete_cast	main.cpp	/^std::shared_ptr<T> jsonConcrete_cast(std::shared_ptr<QQJsonX> Obj){$/;"	f	signature:(std::shared_ptr<QQJsonX> Obj)
+main	main.cpp	/^int main(int argc, char *argv[])$/;"	f	signature:(int argc, char *argv[])
+operator []	qqjson_array.h	/^    std::shared_ptr<QQJsonX> operator[](const uint32_t index)$/;"	f	class:QQJsonArray	access:public	signature:(const uint32_t index)
+operator []	qqjson_object.h	/^    std::shared_ptr<QQJsonX> operator[](const std::string index)$/;"	f	class:QQJsonObject	access:public	signature:(const std::string index)
+override	QQJsonContext.h	/^    ErrorCode_Type request(QQJsonDocument *doc) override;$/;"	m	class:QQJsonContext	access:public
+override	qqjson_array.h	/^    virtual QQJsonX::QQJsonXType whichType() override;$/;"	m	class:QQJsonArray	access:public
+override	qqjson_array.h	/^    virtual const std::string  toString() override;$/;"	m	class:QQJsonArray	access:public
+override	qqjson_boolen.h	/^    virtual QQJsonX::QQJsonXType whichType() override;$/;"	m	class:QQJsonBoolen	access:public
+override	qqjson_boolen.h	/^    virtual const std::string  toString() override;$/;"	m	class:QQJsonBoolen	access:public
+override	qqjson_null.h	/^    virtual QQJsonX::QQJsonXType whichType() override;$/;"	m	class:QQJsonNull	access:public
+override	qqjson_null.h	/^    virtual const std::string  toString() override;$/;"	m	class:QQJsonNull	access:public
+override	qqjson_number.h	/^    virtual QQJsonX::QQJsonXType whichType() override;$/;"	m	class:QQJsonNumber	access:public
+override	qqjson_number.h	/^    virtual const std::string  toString() override;$/;"	m	class:QQJsonNumber	access:public
+override	qqjson_object.h	/^    virtual  const std::string toString() override;$/;"	m	class:QQJsonObject	access:public
+override	qqjson_object.h	/^    virtual QQJsonX::QQJsonXType whichType() override;$/;"	m	class:QQJsonObject	access:public
+override	qqjsonkey.h	/^    virtual QQJsonXType whichType() override;$/;"	m	class:QQJsonKey	access:public
+override	qqjsonkey.h	/^    virtual const std::string toString() override;$/;"	m	class:QQJsonKey	access:public
+peekNextToken	qqjsondocument.cpp	/^QQJsonDocument::Token QQJsonDocument::peekNextToken()$/;"	f	class:QQJsonDocument	signature:()
+peekNextToken	qqjsondocument.h	/^    Token peekNextToken();$/;"	p	class:QQJsonDocument	access:public	signature:()
+popToken	qqjsondocument.h	/^    void popToken();$/;"	p	class:QQJsonDocument	access:public	signature:()
+readAToken	qqjsondocument.cpp	/^std::string QQJsonDocument::readAToken()$/;"	f	class:QQJsonDocument	signature:()
+readAToken	qqjsondocument.h	/^   std::string readAToken();$/;"	p	class:QQJsonDocument	access:public	signature:()
+readBoolen	qqjsondocument.cpp	/^std::string QQJsonDocument::readBoolen()$/;"	f	class:QQJsonDocument	signature:()
+readBoolen	qqjsondocument.h	/^    std::string readBoolen();$/;"	p	class:QQJsonDocument	access:public	signature:()
+readColon	qqjsondocument.cpp	/^std::string QQJsonDocument::readColon()$/;"	f	class:QQJsonDocument	signature:()
+readColon	qqjsondocument.h	/^    std::string readColon();$/;"	p	class:QQJsonDocument	access:public	signature:()
+readComma	qqjsondocument.cpp	/^std::string QQJsonDocument::readComma()$/;"	f	class:QQJsonDocument	signature:()
+readComma	qqjsondocument.h	/^    std::string readComma();$/;"	p	class:QQJsonDocument	access:public	signature:()
+readNull	qqjsondocument.cpp	/^std::string QQJsonDocument::readNull()$/;"	f	class:QQJsonDocument	signature:()
+readNull	qqjsondocument.h	/^    std::string readNull();$/;"	p	class:QQJsonDocument	access:public	signature:()
+readNumber	qqjsondocument.cpp	/^std::string QQJsonDocument::readNumber()$/;"	f	class:QQJsonDocument	signature:()
+readNumber	qqjsondocument.h	/^    std::string readNumber();$/;"	p	class:QQJsonDocument	access:public	signature:()
+readString	qqjsondocument.cpp	/^std::string QQJsonDocument::readString()$/;"	f	class:QQJsonDocument	signature:()
+readString	qqjsondocument.h	/^    std::string readString();$/;"	p	class:QQJsonDocument	access:public	signature:()
+request	QQJsonContext.cpp	/^   QQJsonContext::request(QQJsonDocument *doc)$/;"	f	class:QQJsonContext	signature:(QQJsonDocument *doc)
+setState	AbstractContext.h	/^    void setState(statePtr state){$/;"	f	class:AbstractContext	access:protected	signature:(statePtr state)
+toString	qqjson_array.cpp	/^const std::string QQJsonArray::toString()$/;"	f	class:QQJsonArray	signature:()
+toString	qqjson_boolen.cpp	/^const std::string QQJsonBoolen::toString()$/;"	f	class:QQJsonBoolen	signature:()
+toString	qqjson_null.cpp	/^const std::string QQJsonNull::toString()$/;"	f	class:QQJsonNull	signature:()
+toString	qqjson_number.cpp	/^const std::string QQJsonNumber::toString()$/;"	f	class:QQJsonNumber	signature:()
+toString	qqjson_object.cpp	/^const std::string QQJsonObject::toString()$/;"	f	class:QQJsonObject	signature:()
+toString	qqjsonkey.cpp	/^const std::string QQJsonKey::toString()$/;"	f	class:QQJsonKey	signature:()
+toString	qqjsonx.h	/^    virtual const std::string toString() = 0;$/;"	p	class:QQJsonX	access:public	signature:()
+whichType	qqjson_array.cpp	/^QQJsonX::QQJsonXType QQJsonArray::whichType()$/;"	f	class:QQJsonArray	signature:()
+whichType	qqjson_boolen.cpp	/^QQJsonX::QQJsonXType QQJsonBoolen::whichType()$/;"	f	class:QQJsonBoolen	signature:()
+whichType	qqjson_null.cpp	/^QQJsonX::QQJsonXType QQJsonNull::whichType()$/;"	f	class:QQJsonNull	signature:()
+whichType	qqjson_number.cpp	/^QQJsonX::QQJsonXType QQJsonNumber::whichType()$/;"	f	class:QQJsonNumber	signature:()
+whichType	qqjson_object.cpp	/^QQJsonX::QQJsonXType QQJsonObject::whichType()$/;"	f	class:QQJsonObject	signature:()
+whichType	qqjsonkey.cpp	/^QQJsonX::QQJsonXType QQJsonKey::whichType()$/;"	f	class:QQJsonKey	signature:()
+whichType	qqjsonx.h	/^    virtual QQJsonXType whichType() = 0;$/;"	p	class:QQJsonX	access:public	signature:()

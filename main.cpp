@@ -17,9 +17,6 @@
 #include <sstream>
 
 
-typedef enum{Start, Expect_Key, Expect_Value,
-                    Expect_Colon, Expect_ArrayValue,
-                   Expect_CommaOrEnd, Stack_Top_Check}STATE;
 
 std::stack<std::shared_ptr<QQJsonX> > Stack;
 
