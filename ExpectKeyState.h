@@ -1,3 +1,6 @@
+#ifndef __EXPECTKEYSTATE_H__
+#define __EXPECTKEYSTATE_H__
+
 #include "AbstractState.h"
 #include "AbstractContext.h"
 
@@ -7,3 +10,5 @@ public:
     StateCode_Type handle(AbstractContext *, 
                                 QQJsonDocument *) override;
 };
+
+#endif

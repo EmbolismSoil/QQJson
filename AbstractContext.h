@@ -1,3 +1,6 @@
+#ifndef __ABSTRACTCONTEXT_H__
+#define __ABSTRACTCONTEXT_H__
+
 #include <memory>
 #include <stack>
 #include "qqjsonx.h"
@@ -31,3 +34,4 @@ private:
     statePtr _curState;    
     std::stack<jsonPtr> _stack;
 };
+#endif

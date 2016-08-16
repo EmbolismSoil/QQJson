@@ -1,3 +1,6 @@
+#ifndef __ABSTRACTSTATE_H__
+#define __ABSTRACTSTATE_H__
+
 #include "qqjsondocument.h"
 #include "AbstractContext.h"
 
@@ -13,3 +16,5 @@ public:
     virtual StateCode_Type 
 			handle(AbstractContext* context ,QQJsonDocument *doc) = 0;
 };
+
+#endif
