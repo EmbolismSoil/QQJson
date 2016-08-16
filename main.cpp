@@ -2,7 +2,6 @@
 #include <vector>
 #include <string>
 #include <iostream>
-
 #include <stack>
 #include <qqjsonx.h>
 #include <memory>

@@ -1,19 +1,17 @@
 #include "ExpectArrayValue.h"
 #include "qqjson_number.h"
-#include "ExpectCommaOrEndState.h"
-#include "ExpectValueState.h"
 #include "qqjson_boolen.h"
 #include "qqjson_null.h"
 #include "qqjsonstring.h"
 #include "qqjson_array.h"
 #include "qqjson_object.h"
-#include "ExpectKeyState.h"
+#include "AbstractContext.h"
 
 ExpectArrayValueState::StateCode_Type
     handle(AbstractContext* context, QQJsonDocument *doc)
 {
     auto Token = doc->peekNextToken();
-    ExpectArrayValueState::StateCode_Type ret = AbstractContext::SUCCESS;
+    ExpectArrayValueState::StateCode_Type ret = AbstractState::SUCCESS;
 
     switch(Token){
         case QQJsonDocument::TOKEN_COMMA:{
@@ -24,7 +22,7 @@ ExpectArrayValueState::StateCode_Type
         case QQJsonDocument::TOKEN_BEGIN_OBECT:{
             doc->readAToken();
             context->getStack().push(std::make_shared<QQJsonObject>());
-            context->setCurState(std::make_shared<ExpectKeyState>());
+            context->setCurState(AbstractState::Expect_KeyState);
             break;
         }
 
@@ -32,7 +30,7 @@ ExpectArrayValueState::StateCode_Type
             auto str = doc->readString();
             auto jsonX = context->getStack().top();
             if (jsonX->whichType() != QQJsonX::QQJSON_ARRAY){
-                ret = AbstractContext::FORMAT_ERROR;
+                ret = AbstractState::FORMAT_ERROR;
                 break;
             }
 
@@ -61,7 +59,7 @@ ExpectArrayValueState::StateCode_Type
             auto obj = context->getStack().top();
             if (obj->whichType() != QQJsonX::QQJSON_OBJECT && 
                         obj->whichType() != QQJsonX::QQJSON_ARRAY){
-                ret = AbstractContext::FORMAT_ERROR;
+                ret = AbstractState::FORMAT_ERROR;
                 break;
             }
 
@@ -71,12 +69,11 @@ ExpectArrayValueState::StateCode_Type
                 ExpectArrayValueState::doExpectArrayValue(context, obj);
                 break;
             }else if (ptr->whichType() == QQJsonX::QQJSON_OBJECT){
-                ExpectValueState::doExpectValue(context, obj);
-                auto nextS = std::make_shared<ExpectCommaOrEndState>();
-                context->setCurState(nextS);
+                AbstractState::doExpectValue(context, obj);
+                context->setCurState(AbstractState::Expect_CommaOrEndState);
                 break;
             }else{
-                ret = AbstractContext::FORMAT_ERROR;
+                ret = AbstractState::FORMAT_ERROR;
                 break;
             }
         }
@@ -89,24 +86,9 @@ ExpectArrayValueState::StateCode_Type
         }
 
         default:
-            return AbstractContext::FORMAT_ERROR;
+            return AbstractState::FORMAT_ERROR;
     }
     
     return ret;
 }
 
-ExpectArrayValueState::StateCode_Type
-         doExpectArrayValue(AbstractContext *context, 
-                            AbstractContext::jsonPtr json)
-{
-    auto Stack = context->getStack();
-    auto array = Stack.top();
-
-    if (array->whichType() != QQJsonX::QQJSON_ARRAY)
-            return AbstractContext::FORMAT_ERROR;
-
-    auto jsonArray = std::dynamic_pointer_cast<QQJsonArray>(array);
-    jsonArray->addValue(json);
-
-    return AbstractContext::SUCCESS;
-}

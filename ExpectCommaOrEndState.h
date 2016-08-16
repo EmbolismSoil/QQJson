@@ -4,6 +4,6 @@
 
 class ExpectCommaOrEndState : public AbstractState{
 public:
-    StateCode_Type handle(AbstractContext *, QQJsonDocument *) override;
+    virtual StateCode_Type handle(AbstractContext *, QQJsonDocument *) override;
 };
 #endif

@@ -1,8 +1,9 @@
 #include "ExpectKeyState.h"
+#include "AbstractContext.h"
 #include "qqjsondocument.h"
 #include "qqjsonkey.h" 
 
-class ExpectColonState;
+//class ExpectColonState;
 ExpectKeyState::StateCode_Type
     handle(AbstractContext *context, QQJsonDocument *doc)
 {
@@ -13,17 +14,14 @@ ExpectKeyState::StateCode_Type
             auto jsonStr = std::make_shared<QQJsonKey>(str);
             auto jsonX = std::dynamic_pointer_cast<QQJsonX>(jsonStr);
             context->getStack().push(jsonX);
-            auto nextState = std::make_shared<ExpectColonState>();
-            context->setCurState(
-                    std::dynamic_pointer_cast<AbstractState>(nextState)
-            );
+            context->setCurState(AbstractState::Expect_ColonState);
             break;
         }
 
         default:{
-            return AbstractContext::FORMAT_ERROR; 
+            return AbstractState::FORMAT_ERROR; 
         }
     } 
 
-    return AbstractContext::SUCCESS; 
+    return AbstractState::SUCCESS; 
 }

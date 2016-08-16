@@ -1,6 +1,5 @@
 #include "ExpectColonState.h"
-
-class ExpectValueState;
+#include "AbstractContext.h"
 
 ExpectColonState::StateCode_Type
     handle(AbstractContext* context, QQJsonDocument *doc)
@@ -10,14 +9,12 @@ ExpectColonState::StateCode_Type
         case QQJsonDocument::TOKEN_COLON:{
             doc->readAToken();
             auto nextState = std::make_shared<ExpectColonState>();
-            context->setCurState(
-                std::dynamic_pointer_cast<AbstractState>(nextState)
-            );
+            context->setCurState(AbstractState::Expect_ValueState);
             break;
         }
 
         default:
-            return AbstractContext::FORMAT_ERROR;
+            return AbstractState::FORMAT_ERROR;
     }
-    return AbstractContext::SUCCESS;
+    return AbstractState::SUCCESS;
 }

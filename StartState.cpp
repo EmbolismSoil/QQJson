@@ -1,10 +1,9 @@
 #include "StartState.h"
+#include "qqjsonkey.h"
+#include "AbstractContext.h"
+#include "qqjson_object.h"
 
-class QQJsonKey;
-class QQJsonObject; 
-class ExpectKeyState;
-
-AbstractContext::ErrorCode_Type
+AbstractState::ErrorCode_Type
     handle(AbstractContext *context, QQJsonDocument *doc)
 {
     auto Token = doc->peekNextToken();
@@ -14,16 +13,15 @@ AbstractContext::ErrorCode_Type
 
             auto Key = std::make_shared<QQJsonKey>("root");
             auto Obj = std::make_shared<QQJsonObject>();
-            auto nextState = std::make_shared<ExpectKeyState>();
 
             context->getStack().push(std::dynamic_pointer_cast<QQJsonX>(Key));
             context->getStack().push(std::dynamic_pointer_cast<QQJsonX>(Obj));
 
-            context->setCurState(std::dynamic_pointer_cast<AbstractState>(nextState));
+            context->setCurState(AbstractState::Expect_KeyState);
             break;
         }
         default:
-            return AbstractContext::FORMAT_ERROR;    
+            return AbstractState::FORMAT_ERROR;    
     }
-   return AbstractContext::SUCCESS;
+   return AbstractState::SUCCESS;
 }

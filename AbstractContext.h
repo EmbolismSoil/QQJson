@@ -4,34 +4,23 @@
 #include <memory>
 #include <stack>
 #include "qqjsonx.h"
+#include "AbstractState.h"
 
 class QQJsonDocument;
-class AbstractState;
-
 class AbstractContext{
 public:
     //定义使用的类型
 //    using ErrorCode_Type = int;
-    typedef enum{FORMAT_ERROR, FINISHED, UNKONE_ERROR, SUCCESS} ErrorCode_Type;
-    using statePtr = std::shared_ptr<AbstractState>;
-    using jsonPtr = std::shared_ptr<QQJsonX>;
 
-    virtual ErrorCode_Type request(QQJsonDocument *doc) = 0; 
+    virtual AbstractState::ErrorCode_Type request(QQJsonDocument *doc) = 0; 
 
-    statePtr getCurState(void){
-    	return _curState;
-    }
-
-    void setCurState(statePtr state){
- 	    _curState = state;
-    }
+    virtual void setCurState(AbstractState::State_Type state) = 0;
     
-    std::stack<jsonPtr> &getStack(void){
+    std::stack<AbstractState::jsonPtr> &getStack(void){
         return _stack;
     }
     
 private:
-    statePtr _curState;    
-    std::stack<jsonPtr> _stack;
+    std::stack<AbstractState::jsonPtr> _stack;
 };
 #endif

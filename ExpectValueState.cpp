@@ -1,12 +1,12 @@
 #include "ExpectValueState.h"
+#include "AbstractContext.h"
 #include "qqjson_number.h"
 #include "qqjson_object.h"
 #include "qqjson_null.h"
 #include "qqjsonstring.h"
 #include "qqjson_boolen.h"
 
-using jsonPtr = AbstractContext::jsonPtr;
-class ExpectCommaOrEndState;
+//class ExpectCommaOrEndState;
 
 ExpectValueState::StateCode_Type
     handle(AbstractContext *context, QQJsonDocument *doc)
@@ -38,31 +38,10 @@ ExpectValueState::StateCode_Type
             ret = ExpectValueState::doExpectValue(context, numberObj);
         }
         default:
-            return AbstractContext::FORMAT_ERROR;
+            return AbstractState::FORMAT_ERROR;
     }
     
-    auto nextState = std::make_shared<ExpectCommaOrEndState>(); 
-    context->setCurState(std::dynamic_pointer_cast<AbstractState>(nextState));
+    context->setCurState(AbstractState::Expect_CommaOrEndState);
     return ret;
 }
 
-ExpectValueState::StateCode_Type
-  ExpectValueState::doExpectValue(AbstractContext*context, 
-                   AbstractContext::jsonPtr ptr)
-{
-    auto Stack = context->getStack();   
-    auto Key = Stack.top();
-    Stack.pop();
-    if (Key->whichType() != QQJsonX::QQJSON_KEY)
-        return AbstractContext::FORMAT_ERROR;
-    auto Object = Stack.top();
-    Stack.pop();
-    if (Object->whichType() != QQJsonX::QQJSON_OBJECT)
-        return AbstractContext::FORMAT_ERROR;
-
-    auto Obj = std::dynamic_pointer_cast<QQJsonObject>(Object);
-
-    Obj->addVaule(Key->toString(), ptr);
-    Stack.push(Object);
-    return AbstractContext::SUCCESS;
-}
