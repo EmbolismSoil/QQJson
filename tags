@@ -6,10 +6,11 @@
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
 AR	Makefile	/^AR            = ar cqs$/;"	m
 AbstractContext	AbstractContext.h	/^class AbstractContext{$/;"	c
-AbstractContext::ErrorCode_Type	AbstractContext.h	/^    typedef enum{FORMAT_ERROR, UNKONE_ERROR, SUCCESS} ErrorCode_Type;$/;"	t	class:AbstractContext	typeref:enum:AbstractContext::__anon3	access:public
-AbstractContext::FORMAT_ERROR	AbstractContext.h	/^    typedef enum{FORMAT_ERROR, UNKONE_ERROR, SUCCESS} ErrorCode_Type;$/;"	e	enum:AbstractContext::__anon3
-AbstractContext::SUCCESS	AbstractContext.h	/^    typedef enum{FORMAT_ERROR, UNKONE_ERROR, SUCCESS} ErrorCode_Type;$/;"	e	enum:AbstractContext::__anon3
-AbstractContext::UNKONE_ERROR	AbstractContext.h	/^    typedef enum{FORMAT_ERROR, UNKONE_ERROR, SUCCESS} ErrorCode_Type;$/;"	e	enum:AbstractContext::__anon3
+AbstractContext::ErrorCode_Type	AbstractContext.h	/^    typedef enum{FORMAT_ERROR, FINISHED, UNKONE_ERROR, SUCCESS} ErrorCode_Type;$/;"	t	class:AbstractContext	typeref:enum:AbstractContext::__anon3	access:public
+AbstractContext::FINISHED	AbstractContext.h	/^    typedef enum{FORMAT_ERROR, FINISHED, UNKONE_ERROR, SUCCESS} ErrorCode_Type;$/;"	e	enum:AbstractContext::__anon3
+AbstractContext::FORMAT_ERROR	AbstractContext.h	/^    typedef enum{FORMAT_ERROR, FINISHED, UNKONE_ERROR, SUCCESS} ErrorCode_Type;$/;"	e	enum:AbstractContext::__anon3
+AbstractContext::SUCCESS	AbstractContext.h	/^    typedef enum{FORMAT_ERROR, FINISHED, UNKONE_ERROR, SUCCESS} ErrorCode_Type;$/;"	e	enum:AbstractContext::__anon3
+AbstractContext::UNKONE_ERROR	AbstractContext.h	/^    typedef enum{FORMAT_ERROR, FINISHED, UNKONE_ERROR, SUCCESS} ErrorCode_Type;$/;"	e	enum:AbstractContext::__anon3
 AbstractContext::_curState	AbstractContext.h	/^    statePtr _curState;    $/;"	m	class:AbstractContext	access:private
 AbstractContext::_stack	AbstractContext.h	/^    std::stack<jsonPtr> _stack;$/;"	m	class:AbstractContext	access:private
 AbstractContext::getCurState	AbstractContext.h	/^    statePtr getCurState(void){$/;"	f	class:AbstractContext	access:public	signature:(void)
@@ -42,21 +43,27 @@ DESTDIR	Makefile	/^DESTDIR       = #avoid trailing-slash linebreak$/;"	m
 DIST	Makefile	/^DIST          = ..\/..\/Qt5.5.1\/5.5\/gcc\/mkspecs\/features\/spec_pre.prf \\$/;"	m
 DISTDIR	Makefile	/^DISTDIR = \/home\/lee\/github\/QQJson\/.tmp\/QQJson1.0.0$/;"	m
 DISTNAME	Makefile	/^DISTNAME      = QQJson1.0.0$/;"	m
-ErrorCode_Type	AbstractContext.h	/^    typedef enum{FORMAT_ERROR, UNKONE_ERROR, SUCCESS} ErrorCode_Type;$/;"	t	class:AbstractContext	typeref:enum:AbstractContext::__anon3	access:public
+ErrorCode_Type	AbstractContext.h	/^    typedef enum{FORMAT_ERROR, FINISHED, UNKONE_ERROR, SUCCESS} ErrorCode_Type;$/;"	t	class:AbstractContext	typeref:enum:AbstractContext::__anon3	access:public
+ExpectArrayValueState	ExpectArrayValue.h	/^class ExpectArrayValueState : public AbstractState{$/;"	c	inherits:AbstractState
+ExpectArrayValueState::doExpectArrayValue	ExpectArrayValue.h	/^    static StateCode_Type doExpectArrayValue(AbstractContext*, $/;"	p	class:ExpectArrayValueState	access:public	signature:(AbstractContext*, AbstractContext::jsonPtr)
+ExpectArrayValueState::override	ExpectArrayValue.h	/^    StateCode_Type handle(AbstractContext*, QQJsonDocument *) override;$/;"	m	class:ExpectArrayValueState	access:public
 ExpectColonState	ExpectColonState.h	/^class ExpectColonState : public AbstractState{$/;"	c	inherits:AbstractState
 ExpectColonState::override	ExpectColonState.h	/^    StateCode_Type handle(AbstractContext*, QQJsonDocument *) override;$/;"	m	class:ExpectColonState	access:public
+ExpectCommaOrEndState	ExpectCommaOrEndState.h	/^class ExpectCommaOrEndState : public AbstractState{$/;"	c	inherits:AbstractState
+ExpectCommaOrEndState::override	ExpectCommaOrEndState.h	/^    StateCode_Type handle(AbstractContext *, QQJsonDocument *) override;$/;"	m	class:ExpectCommaOrEndState	access:public
 ExpectKeyState	ExpectKeyState.h	/^class ExpectKeyState: public AbstractState{$/;"	c	inherits:AbstractState
 ExpectKeyState::override	ExpectKeyState.h	/^                                QQJsonDocument *) override;$/;"	m	class:ExpectKeyState	access:public
 ExpectValueState	ExpectValueState.h	/^class ExpectValueState : public AbstractState{$/;"	c	inherits:AbstractState
 ExpectValueState::doExpectValue	ExpectValueState.cpp	/^  ExpectValueState::doExpectValue(AbstractContext*context, $/;"	f	class:ExpectValueState	signature:(AbstractContext*context, AbstractContext::jsonPtr ptr)
-ExpectValueState::doExpectValue	ExpectValueState.h	/^    static StateCode_Type doExpectValue(AbstractContext* context, AbstractContext::jsonPtr ptr);$/;"	p	class:ExpectValueState	access:private	signature:(AbstractContext* context, AbstractContext::jsonPtr ptr)
+ExpectValueState::doExpectValue	ExpectValueState.h	/^    static StateCode_Type doExpectValue(AbstractContext* context, AbstractContext::jsonPtr ptr);$/;"	p	class:ExpectValueState	access:public	signature:(AbstractContext* context, AbstractContext::jsonPtr ptr)
 ExpectValueState::override	ExpectValueState.h	/^    StateCode_Type handle(AbstractContext*, QQJsonDocument *) override;$/;"	m	class:ExpectValueState	access:public
 Expect_ArrayValue	AbstractState.h	/^                    Expect_Colon, Expect_ArrayValue,$/;"	e	enum:AbstractState::__anon4
 Expect_Colon	AbstractState.h	/^                    Expect_Colon, Expect_ArrayValue,$/;"	e	enum:AbstractState::__anon4
 Expect_CommaOrEnd	AbstractState.h	/^                   Expect_CommaOrEnd, Stack_Top_Check}STATE;$/;"	e	enum:AbstractState::__anon4
 Expect_Key	AbstractState.h	/^    typedef enum{Start, Expect_Key, Expect_Value,$/;"	e	enum:AbstractState::__anon4
 Expect_Value	AbstractState.h	/^    typedef enum{Start, Expect_Key, Expect_Value,$/;"	e	enum:AbstractState::__anon4
-FORMAT_ERROR	AbstractContext.h	/^    typedef enum{FORMAT_ERROR, UNKONE_ERROR, SUCCESS} ErrorCode_Type;$/;"	e	enum:AbstractContext::__anon3
+FINISHED	AbstractContext.h	/^    typedef enum{FORMAT_ERROR, FINISHED, UNKONE_ERROR, SUCCESS} ErrorCode_Type;$/;"	e	enum:AbstractContext::__anon3
+FORMAT_ERROR	AbstractContext.h	/^    typedef enum{FORMAT_ERROR, FINISHED, UNKONE_ERROR, SUCCESS} ErrorCode_Type;$/;"	e	enum:AbstractContext::__anon3
 INCPATH	Makefile	/^INCPATH       = -I. -I. -I..\/..\/Qt5.5.1\/5.5\/gcc\/include -I..\/..\/Qt5.5.1\/5.5\/gcc\/include\/QtGui -I..\/..\/Qt5.5.1\/5.5\/gcc\/include\/QtCore -I. -I..\/..\/Qt5.5.1\/5.5\/gcc\/mkspecs\/linux-g++-32$/;"	m
 INSTALL_DIR	Makefile	/^INSTALL_DIR   = cp -f -R$/;"	m
 INSTALL_FILE	Makefile	/^INSTALL_FILE  = install -m 644 -p$/;"	m
@@ -239,7 +246,7 @@ SED	Makefile	/^SED           = sed$/;"	m
 SOURCES	Makefile	/^SOURCES       = AbstractContext.cpp \\$/;"	m
 STATE	AbstractState.h	/^                   Expect_CommaOrEnd, Stack_Top_Check}STATE;$/;"	t	class:AbstractState	typeref:enum:AbstractState::__anon4	access:public
 STRIP	Makefile	/^STRIP         = strip$/;"	m
-SUCCESS	AbstractContext.h	/^    typedef enum{FORMAT_ERROR, UNKONE_ERROR, SUCCESS} ErrorCode_Type;$/;"	e	enum:AbstractContext::__anon3
+SUCCESS	AbstractContext.h	/^    typedef enum{FORMAT_ERROR, FINISHED, UNKONE_ERROR, SUCCESS} ErrorCode_Type;$/;"	e	enum:AbstractContext::__anon3
 SYMLINK	Makefile	/^SYMLINK       = ln -f -s$/;"	m
 Stack	main.cpp	/^std::stack<std::shared_ptr<QQJsonX> > Stack;$/;"	v
 Stack_Top_Check	AbstractState.h	/^                   Expect_CommaOrEnd, Stack_Top_Check}STATE;$/;"	e	enum:AbstractState::__anon4
@@ -260,7 +267,7 @@ TOKEN_NULL	qqjsondocument.h	/^        TOKEN_NULL, TOKEN_ERROR,$/;"	e	enum:QQJson
 TOKEN_NUMER	qqjsondocument.h	/^        TOKEN_STRING, TOKEN_BOOLEN, TOKEN_NUMER,$/;"	e	enum:QQJsonDocument::__anon1
 TOKEN_STRING	qqjsondocument.h	/^        TOKEN_STRING, TOKEN_BOOLEN, TOKEN_NUMER,$/;"	e	enum:QQJsonDocument::__anon1
 Token	qqjsondocument.h	/^    }Token;$/;"	t	class:QQJsonDocument	typeref:enum:QQJsonDocument::__anon1	access:public
-UNKONE_ERROR	AbstractContext.h	/^    typedef enum{FORMAT_ERROR, UNKONE_ERROR, SUCCESS} ErrorCode_Type;$/;"	e	enum:AbstractContext::__anon3
+UNKONE_ERROR	AbstractContext.h	/^    typedef enum{FORMAT_ERROR, FINISHED, UNKONE_ERROR, SUCCESS} ErrorCode_Type;$/;"	e	enum:AbstractContext::__anon3
 _ArrayName	qqjson_array.h	/^    std::string _ArrayName;$/;"	m	class:QQJsonArray	access:private
 _ArrayVector	qqjson_array.h	/^    std::vector<std::shared_ptr<QQJsonX> >  _ArrayVector;$/;"	m	class:QQJsonArray	access:private
 _BeginDocumentIter	qqjsondocument.h	/^   std::string::iterator _BeginDocumentIter;$/;"	m	class:QQJsonDocument	access:private
@@ -274,7 +281,9 @@ _String	qqjsonstring.h	/^    std::string _String;$/;"	m	class:QQJsonString	acces
 _WorkerIter	qqjsondocument.h	/^   std::string::iterator _WorkerIter;$/;"	m	class:QQJsonDocument	access:private
 __ABSTRACTCONTEXT_H__	AbstractContext.h	2;"	d
 __ABSTRACTSTATE_H__	AbstractState.h	2;"	d
+__EXPECTARRAYVALUE_H__	ExpectArrayValue.h	2;"	d
 __EXPECTCOLONSTATE_H__	ExpectColonState.h	2;"	d
+__EXPECTCOMMAORENDSTATE_H__	ExpectCommaOrEndState.h	2;"	d
 __EXPECTKEYSTATE_H__	ExpectKeyState.h	2;"	d
 __EXPECTVALUESTATE_H__	ExpectValueState.h	2;"	d
 __QQJSONCONTEXT_H__	QQJsonContext.h	2;"	d
@@ -287,15 +296,19 @@ addValue	qqjson_array.cpp	/^void QQJsonArray::addValue(std::shared_ptr<QQJsonX> 
 addValue	qqjson_array.h	/^    virtual void addValue(std::shared_ptr<QQJsonX> ptr);$/;"	p	class:QQJsonArray	access:public	signature:(std::shared_ptr<QQJsonX> ptr)
 addVaule	qqjson_object.cpp	/^void QQJsonObject::addVaule(const std::string &key, std::shared_ptr<QQJsonX> value)$/;"	f	class:QQJsonObject	signature:(const std::string &key, std::shared_ptr<QQJsonX> value)
 addVaule	qqjson_object.h	/^    virtual void addVaule(const std::string &key, std::shared_ptr<QQJsonX> value);$/;"	p	class:QQJsonObject	access:public	signature:(const std::string &key, std::shared_ptr<QQJsonX> value)
+doExpectArrayValue	ExpectArrayValue.cpp	/^         doExpectArrayValue(AbstractContext *context, $/;"	f	signature:(AbstractContext *context, AbstractContext::jsonPtr json)
+doExpectArrayValue	ExpectArrayValue.h	/^    static StateCode_Type doExpectArrayValue(AbstractContext*, $/;"	p	class:ExpectArrayValueState	access:public	signature:(AbstractContext*, AbstractContext::jsonPtr)
 doExpectArrayValue	main.cpp	/^int doExpectArrayValue(std::shared_ptr<T> ptr)$/;"	f	signature:(std::shared_ptr<T> ptr)
 doExpectValue	ExpectValueState.cpp	/^  ExpectValueState::doExpectValue(AbstractContext*context, $/;"	f	class:ExpectValueState	signature:(AbstractContext*context, AbstractContext::jsonPtr ptr)
-doExpectValue	ExpectValueState.h	/^    static StateCode_Type doExpectValue(AbstractContext* context, AbstractContext::jsonPtr ptr);$/;"	p	class:ExpectValueState	access:private	signature:(AbstractContext* context, AbstractContext::jsonPtr ptr)
+doExpectValue	ExpectValueState.h	/^    static StateCode_Type doExpectValue(AbstractContext* context, AbstractContext::jsonPtr ptr);$/;"	p	class:ExpectValueState	access:public	signature:(AbstractContext* context, AbstractContext::jsonPtr ptr)
 doExpectValue	main.cpp	/^int doExpectValue(std::shared_ptr<QQJsonX> ptr)$/;"	f	signature:(std::shared_ptr<QQJsonX> ptr)
 getCurState	AbstractContext.h	/^    statePtr getCurState(void){$/;"	f	class:AbstractContext	access:public	signature:(void)
 getKey	qqjsonkey.h	/^    const std::string &getKey(){return _key;}$/;"	f	class:QQJsonKey	access:public	signature:()
 getStack	AbstractContext.h	/^    std::stack<jsonPtr> &getStack(void){$/;"	f	class:AbstractContext	access:public	signature:(void)
 handle	AbstractState.h	/^			handle(AbstractContext* context ,QQJsonDocument *doc) = 0;$/;"	p	class:AbstractState	access:public	signature:(AbstractContext* context ,QQJsonDocument *doc)
+handle	ExpectArrayValue.cpp	/^    handle(AbstractContext* context, QQJsonDocument *doc)$/;"	f	signature:(AbstractContext* context, QQJsonDocument *doc)
 handle	ExpectColonState.cpp	/^    handle(AbstractContext* context, QQJsonDocument *doc)$/;"	f	signature:(AbstractContext* context, QQJsonDocument *doc)
+handle	ExpectCommaOrEndState.cpp	/^    handle(AbstractContext *context, QQJsonDocument *doc)$/;"	f	signature:(AbstractContext *context, QQJsonDocument *doc)
 handle	ExpectKeyState.cpp	/^    handle(AbstractContext *context, QQJsonDocument *doc)$/;"	f	signature:(AbstractContext *context, QQJsonDocument *doc)
 handle	ExpectValueState.cpp	/^    handle(AbstractContext *context, QQJsonDocument *doc)$/;"	f	signature:(AbstractContext *context, QQJsonDocument *doc)
 handle	StartState.cpp	/^    handle(AbstractContext *context, QQJsonDocument *doc)$/;"	f	signature:(AbstractContext *context, QQJsonDocument *doc)
@@ -304,7 +317,9 @@ jsonConcrete_cast	main.cpp	/^std::shared_ptr<T> jsonConcrete_cast(std::shared_pt
 main	main.cpp	/^int main(int argc, char *argv[])$/;"	f	signature:(int argc, char *argv[])
 operator []	qqjson_array.h	/^    std::shared_ptr<QQJsonX> operator[](const uint32_t index)$/;"	f	class:QQJsonArray	access:public	signature:(const uint32_t index)
 operator []	qqjson_object.h	/^    std::shared_ptr<QQJsonX> operator[](const std::string index)$/;"	f	class:QQJsonObject	access:public	signature:(const std::string index)
+override	ExpectArrayValue.h	/^    StateCode_Type handle(AbstractContext*, QQJsonDocument *) override;$/;"	m	class:ExpectArrayValueState	access:public
 override	ExpectColonState.h	/^    StateCode_Type handle(AbstractContext*, QQJsonDocument *) override;$/;"	m	class:ExpectColonState	access:public
+override	ExpectCommaOrEndState.h	/^    StateCode_Type handle(AbstractContext *, QQJsonDocument *) override;$/;"	m	class:ExpectCommaOrEndState	access:public
 override	ExpectKeyState.h	/^                                QQJsonDocument *) override;$/;"	m	class:ExpectKeyState	access:public
 override	ExpectValueState.h	/^    StateCode_Type handle(AbstractContext*, QQJsonDocument *) override;$/;"	m	class:ExpectValueState	access:public
 override	QQJsonContext.h	/^    ErrorCode_Type request(QQJsonDocument *doc) override;$/;"	m	class:QQJsonContext	access:public

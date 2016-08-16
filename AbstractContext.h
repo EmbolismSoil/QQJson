@@ -12,7 +12,7 @@ class AbstractContext{
 public:
     //定义使用的类型
 //    using ErrorCode_Type = int;
-    typedef enum{FORMAT_ERROR, UNKONE_ERROR, SUCCESS} ErrorCode_Type;
+    typedef enum{FORMAT_ERROR, FINISHED, UNKONE_ERROR, SUCCESS} ErrorCode_Type;
     using statePtr = std::shared_ptr<AbstractState>;
     using jsonPtr = std::shared_ptr<QQJsonX>;
 

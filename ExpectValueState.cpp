@@ -6,7 +6,7 @@
 #include "qqjson_boolen.h"
 
 using jsonPtr = AbstractContext::jsonPtr;
-class ExpectCommaOrEnsState;
+class ExpectCommaOrEndState;
 
 ExpectValueState::StateCode_Type
     handle(AbstractContext *context, QQJsonDocument *doc)
@@ -41,7 +41,7 @@ ExpectValueState::StateCode_Type
             return AbstractContext::FORMAT_ERROR;
     }
     
-    auto nextState = std::make_shared<ExpectCommaOrEnsState>(); 
+    auto nextState = std::make_shared<ExpectCommaOrEndState>(); 
     context->setCurState(std::dynamic_pointer_cast<AbstractState>(nextState));
     return ret;
 }
