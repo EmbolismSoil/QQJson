@@ -11,16 +11,19 @@ AbstractContext::ErrorCode_Type
     switch(Token){
         case QQJsonDocument::TOKEN_BEGIN_OBECT :{
             doc->readAToken();
+
             auto Key = std::make_shared<QQJsonKey>("root");
-            context->getStack().push(std::dynamic_pointer_cast<QQJsonX>(Key));
             auto Obj = std::make_shared<QQJsonObject>();
-            context->getStack().push(std::dynamic_pointer_cast<QQJsonX>(Obj));
             auto nextState = std::make_shared<ExpectKeyState>();
+
+            context->getStack().push(std::dynamic_pointer_cast<QQJsonX>(Key));
+            context->getStack().push(std::dynamic_pointer_cast<QQJsonX>(Obj));
+
             context->setCurState(std::dynamic_pointer_cast<AbstractState>(nextState));
             break;
         }
         default:
-            return -1;    
+            return AbstractContext::FORMAT_ERROR;    
     }
-   return 0;
+   return AbstractContext::SUCCESS;
 }

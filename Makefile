@@ -14,7 +14,7 @@ CC            = gcc
 CXX           = g++
 DEFINES       = -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB
 CFLAGS        = -m32 -pipe -O2 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-CXXFLAGS      = -m32 -pipe -O2 -std=c++0x -Wall -W -D_REENTRANT -fPIC $(DEFINES)
+CXXFLAGS      = -m32 -pipe -O2 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 INCPATH       = -I. -I. -I../../Qt5.5.1/5.5/gcc/include -I../../Qt5.5.1/5.5/gcc/include/QtGui -I../../Qt5.5.1/5.5/gcc/include/QtCore -I. -I../../Qt5.5.1/5.5/gcc/mkspecs/linux-g++-32
 QMAKE         = /usr/bin/qmake
 DEL_FILE      = rm -f
@@ -49,6 +49,7 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = AbstractContext.cpp \
+		ExpectKeyState.cpp \
 		main.cpp \
 		qqjson.cpp \
 		qqjson_array.cpp \
@@ -60,8 +61,10 @@ SOURCES       = AbstractContext.cpp \
 		qqjsondocument.cpp \
 		qqjsonkey.cpp \
 		qqjsonstring.cpp \
-		qqjsonx.cpp 
+		qqjsonx.cpp \
+		StartState.cpp 
 OBJECTS       = AbstractContext.o \
+		ExpectKeyState.o \
 		main.o \
 		qqjson.o \
 		qqjson_array.o \
@@ -73,7 +76,8 @@ OBJECTS       = AbstractContext.o \
 		qqjsondocument.o \
 		qqjsonkey.o \
 		qqjsonstring.o \
-		qqjsonx.o
+		qqjsonx.o \
+		StartState.o
 DIST          = ../../Qt5.5.1/5.5/gcc/mkspecs/features/spec_pre.prf \
 		../../Qt5.5.1/5.5/gcc/mkspecs/common/unix.conf \
 		../../Qt5.5.1/5.5/gcc/mkspecs/common/linux.conf \
@@ -197,7 +201,6 @@ DIST          = ../../Qt5.5.1/5.5/gcc/mkspecs/features/spec_pre.prf \
 		../../Qt5.5.1/5.5/gcc/mkspecs/features/default_pre.prf \
 		../../Qt5.5.1/5.5/gcc/mkspecs/features/resolve_config.prf \
 		../../Qt5.5.1/5.5/gcc/mkspecs/features/default_post.prf \
-		../../Qt5.5.1/5.5/gcc/mkspecs/features/c++11.prf \
 		../../Qt5.5.1/5.5/gcc/mkspecs/features/warn_on.prf \
 		../../Qt5.5.1/5.5/gcc/mkspecs/features/qt.prf \
 		../../Qt5.5.1/5.5/gcc/mkspecs/features/resources.prf \
@@ -210,6 +213,7 @@ DIST          = ../../Qt5.5.1/5.5/gcc/mkspecs/features/spec_pre.prf \
 		../../Qt5.5.1/5.5/gcc/mkspecs/features/lex.prf \
 		QQJson.pro AbstractContext.h \
 		AbstractState.h \
+		ExpectKeyState.h \
 		qqjson.h \
 		qqjson_array.h \
 		qqjson_boolen.h \
@@ -220,7 +224,9 @@ DIST          = ../../Qt5.5.1/5.5/gcc/mkspecs/features/spec_pre.prf \
 		qqjsondocument.h \
 		qqjsonkey.h \
 		qqjsonstring.h \
-		qqjsonx.h AbstractContext.cpp \
+		qqjsonx.h \
+		StartState.h AbstractContext.cpp \
+		ExpectKeyState.cpp \
 		main.cpp \
 		qqjson.cpp \
 		qqjson_array.cpp \
@@ -232,7 +238,8 @@ DIST          = ../../Qt5.5.1/5.5/gcc/mkspecs/features/spec_pre.prf \
 		qqjsondocument.cpp \
 		qqjsonkey.cpp \
 		qqjsonstring.cpp \
-		qqjsonx.cpp
+		qqjsonx.cpp \
+		StartState.cpp
 QMAKE_TARGET  = QQJson
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = QQJson
@@ -386,7 +393,6 @@ Makefile: QQJson.pro ../../Qt5.5.1/5.5/gcc/mkspecs/linux-g++-32/qmake.conf ../..
 		../../Qt5.5.1/5.5/gcc/mkspecs/features/default_pre.prf \
 		../../Qt5.5.1/5.5/gcc/mkspecs/features/resolve_config.prf \
 		../../Qt5.5.1/5.5/gcc/mkspecs/features/default_post.prf \
-		../../Qt5.5.1/5.5/gcc/mkspecs/features/c++11.prf \
 		../../Qt5.5.1/5.5/gcc/mkspecs/features/warn_on.prf \
 		../../Qt5.5.1/5.5/gcc/mkspecs/features/qt.prf \
 		../../Qt5.5.1/5.5/gcc/mkspecs/features/resources.prf \
@@ -524,7 +530,6 @@ Makefile: QQJson.pro ../../Qt5.5.1/5.5/gcc/mkspecs/linux-g++-32/qmake.conf ../..
 ../../Qt5.5.1/5.5/gcc/mkspecs/features/default_pre.prf:
 ../../Qt5.5.1/5.5/gcc/mkspecs/features/resolve_config.prf:
 ../../Qt5.5.1/5.5/gcc/mkspecs/features/default_post.prf:
-../../Qt5.5.1/5.5/gcc/mkspecs/features/c++11.prf:
 ../../Qt5.5.1/5.5/gcc/mkspecs/features/warn_on.prf:
 ../../Qt5.5.1/5.5/gcc/mkspecs/features/qt.prf:
 ../../Qt5.5.1/5.5/gcc/mkspecs/features/resources.prf:
@@ -552,8 +557,8 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents AbstractContext.h AbstractState.h qqjson.h qqjson_array.h qqjson_boolen.h qqjson_null.h qqjson_number.h qqjson_object.h QQJsonContext.h qqjsondocument.h qqjsonkey.h qqjsonstring.h qqjsonx.h $(DISTDIR)/
-	$(COPY_FILE) --parents AbstractContext.cpp main.cpp qqjson.cpp qqjson_array.cpp qqjson_boolen.cpp qqjson_null.cpp qqjson_number.cpp qqjson_object.cpp QQJsonContext.cpp qqjsondocument.cpp qqjsonkey.cpp qqjsonstring.cpp qqjsonx.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents AbstractContext.h AbstractState.h ExpectKeyState.h qqjson.h qqjson_array.h qqjson_boolen.h qqjson_null.h qqjson_number.h qqjson_object.h QQJsonContext.h qqjsondocument.h qqjsonkey.h qqjsonstring.h qqjsonx.h StartState.h $(DISTDIR)/
+	$(COPY_FILE) --parents AbstractContext.cpp ExpectKeyState.cpp main.cpp qqjson.cpp qqjson_array.cpp qqjson_boolen.cpp qqjson_null.cpp qqjson_number.cpp qqjson_object.cpp QQJsonContext.cpp qqjsondocument.cpp qqjsonkey.cpp qqjsonstring.cpp qqjsonx.cpp StartState.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -593,6 +598,9 @@ compiler_clean:
 AbstractContext.o: AbstractContext.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o AbstractContext.o AbstractContext.cpp
 
+ExpectKeyState.o: ExpectKeyState.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ExpectKeyState.o ExpectKeyState.cpp
+
 main.o: main.cpp qqjsondocument.h \
 		qqjsonx.h \
 		qqjsonkey.h \
@@ -631,6 +639,7 @@ qqjson_object.o: qqjson_object.cpp qqjson_object.h \
 
 QQJsonContext.o: QQJsonContext.cpp QQJsonContext.h \
 		AbstractContext.h \
+		qqjsonx.h \
 		AbstractState.h \
 		qqjsondocument.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o QQJsonContext.o QQJsonContext.cpp
@@ -648,6 +657,13 @@ qqjsonstring.o: qqjsonstring.cpp qqjsonstring.h \
 
 qqjsonx.o: qqjsonx.cpp qqjsonx.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qqjsonx.o qqjsonx.cpp
+
+StartState.o: StartState.cpp StartState.h \
+		AbstractState.h \
+		qqjsondocument.h \
+		AbstractContext.h \
+		qqjsonx.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o StartState.o StartState.cpp
 
 ####### Install
 
