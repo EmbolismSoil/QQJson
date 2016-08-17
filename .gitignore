@@ -1,2 +1,6 @@
 *.pro
 *.pro.user
+Makefile
+makefile
+*.py
+*.pyc
