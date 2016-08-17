@@ -2,48 +2,55 @@
 #include "ExpectCommaOrEndState.h"
 #include "ExpectArrayValue.h"
 #include "StartState.h"
-#include "ExpectKeyState.cpp"
-#include "ExpectColonState.h"
+#include "ExpectKeyState.h"
 #include "ExpectValueState.h"
+#include "ExpectColonState.h"
+#include "ExpectKeyState.h"
 
+QQJsonContext::QQJsonContext():_curState(std::make_shared<StartState>())
+{
 
-AbstractState::ErrorCode_Type 
+}
+
+QQJson::StateCode_Type
    QQJsonContext::request(QQJsonDocument *doc)
 {
     return getCurState()->handle(this, doc);
 }
 
-void QQJsonContext::setCurState(AbstractState::State_Type state)
+void QQJsonContext::setCurState(QQJson::State_Type state)
 {
+
     switch(state){
-        case AbstractState::Expect_KeyState:{
+        case QQJson::Expect_KeyState:{
             _curState = std::make_shared<ExpectKeyState>();
             break;
         }
 
-        case AbstractState::Expect_CommaOrEndState:{
+        case QQJson::Expect_CommaOrEndState:{
             _curState = std::make_shared<ExpectCommaOrEndState>();
             break;
         }
 
-        case AbstractState::Expect_ColonState:{
+        case QQJson::Expect_ColonState:{
             _curState = std::make_shared<ExpectColonState>();
             break;
         }
 
-        case AbstractState::Expect_ValueState:{
+        case QQJson::Expect_ValueState:{
             _curState = std::make_shared<ExpectValueState>();
             break;
         }
 
-        case AbstractState::Expect_ArrayValueState:{
+        case QQJson::Expect_ArrayValueState:{
             _curState = std::make_shared<ExpectArrayValueState>();
             break;
         }
 
-        case AbstractState::Start_State:{
+        case QQJson::Start_State:{
             _curState = std::make_shared<StartState>();
             break;
         }
     }
+
 }

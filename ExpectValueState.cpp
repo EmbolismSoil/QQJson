@@ -8,11 +8,11 @@
 
 //class ExpectCommaOrEndState;
 
-ExpectValueState::StateCode_Type
-    handle(AbstractContext *context, QQJsonDocument *doc)
+QQJson::StateCode_Type
+    ExpectValueState::handle(AbstractContext *context, QQJsonDocument *doc)
 {
     auto token = doc->peekNextToken();
-    ExpectValueState::StateCode_Type ret;
+    QQJson::StateCode_Type ret;
     switch(token){
         case QQJsonDocument::TOKEN_NULL:{
            doc->readNull();
@@ -38,10 +38,10 @@ ExpectValueState::StateCode_Type
             ret = ExpectValueState::doExpectValue(context, numberObj);
         }
         default:
-            return AbstractState::FORMAT_ERROR;
+            return QQJson::FORMAT_ERROR;
     }
     
-    context->setCurState(AbstractState::Expect_CommaOrEndState);
+    context->setCurState(QQJson::Expect_CommaOrEndState);
     return ret;
 }
 

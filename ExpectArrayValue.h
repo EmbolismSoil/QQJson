@@ -4,7 +4,7 @@
 
 class ExpectArrayValueState : public AbstractState{
 public:
-    virtual StateCode_Type handle(AbstractContext*, QQJsonDocument *) override;
+    virtual QQJson::StateCode_Type handle(AbstractContext*, QQJsonDocument *) override;
 };
 
 #endif

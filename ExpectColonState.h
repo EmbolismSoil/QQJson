@@ -4,7 +4,7 @@
 
 class ExpectColonState : public AbstractState{
 public:
-    StateCode_Type handle(AbstractContext*, QQJsonDocument *) override;
+    QQJson::StateCode_Type handle(AbstractContext*, QQJsonDocument *) override;
 };
 
 #endif

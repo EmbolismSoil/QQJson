@@ -6,8 +6,8 @@
 class AbstractContext;
 class StartState: public AbstractState{
 public:
-    AbstractState::ErrorCode_Type 
-         handle(AbstractContext *context, QQJsonDocument *doc);
+    QQJson::StateCode_Type
+         handle(AbstractContext *context, QQJsonDocument *doc) override;
 };
 
 #endif

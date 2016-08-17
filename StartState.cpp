@@ -2,9 +2,11 @@
 #include "qqjsonkey.h"
 #include "AbstractContext.h"
 #include "qqjson_object.h"
+#include "QQJsonCommon.h"
 
-AbstractState::ErrorCode_Type
-    handle(AbstractContext *context, QQJsonDocument *doc)
+using namespace QQJson;
+QQJson::StateCode_Type
+    StartState::handle(AbstractContext *context, QQJsonDocument *doc)
 {
     auto Token = doc->peekNextToken();
     switch(Token){
@@ -17,11 +19,11 @@ AbstractState::ErrorCode_Type
             context->getStack().push(std::dynamic_pointer_cast<QQJsonX>(Key));
             context->getStack().push(std::dynamic_pointer_cast<QQJsonX>(Obj));
 
-            context->setCurState(AbstractState::Expect_KeyState);
+            context->setCurState(Expect_KeyState);
             break;
         }
         default:
-            return AbstractState::FORMAT_ERROR;    
+            return QQJson::FORMAT_ERROR;    
     }
-   return AbstractState::SUCCESS;
+   return SUCCESS;
 }

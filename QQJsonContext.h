@@ -10,8 +10,9 @@
 
 class QQJsonContext: public AbstractContext{
 public:
-    AbstractState::ErrorCode_Type request(QQJsonDocument *doc) override;
-    void setCurState(AbstractState::State_Type state) override;
+    QQJson::StateCode_Type request(QQJsonDocument *doc) override;
+    QQJsonContext();
+    void setCurState(QQJson::State_Type state) override;
 
     std::shared_ptr<AbstractState> getCurState(void)
     {

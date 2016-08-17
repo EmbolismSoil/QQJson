@@ -7,11 +7,12 @@
 #include "qqjson_object.h"
 #include "AbstractContext.h"
 
-ExpectArrayValueState::StateCode_Type
-    handle(AbstractContext* context, QQJsonDocument *doc)
+using namespace QQJson;
+QQJson::StateCode_Type
+    ExpectArrayValueState::handle(AbstractContext* context, QQJsonDocument *doc)
 {
     auto Token = doc->peekNextToken();
-    ExpectArrayValueState::StateCode_Type ret = AbstractState::SUCCESS;
+    QQJson::StateCode_Type ret = QQJson::SUCCESS;
 
     switch(Token){
         case QQJsonDocument::TOKEN_COMMA:{
@@ -22,7 +23,7 @@ ExpectArrayValueState::StateCode_Type
         case QQJsonDocument::TOKEN_BEGIN_OBECT:{
             doc->readAToken();
             context->getStack().push(std::make_shared<QQJsonObject>());
-            context->setCurState(AbstractState::Expect_KeyState);
+            context->setCurState(Expect_KeyState);
             break;
         }
 
@@ -30,7 +31,7 @@ ExpectArrayValueState::StateCode_Type
             auto str = doc->readString();
             auto jsonX = context->getStack().top();
             if (jsonX->whichType() != QQJsonX::QQJSON_ARRAY){
-                ret = AbstractState::FORMAT_ERROR;
+                ret = FORMAT_ERROR;
                 break;
             }
 
@@ -59,7 +60,7 @@ ExpectArrayValueState::StateCode_Type
             auto obj = context->getStack().top();
             if (obj->whichType() != QQJsonX::QQJSON_OBJECT && 
                         obj->whichType() != QQJsonX::QQJSON_ARRAY){
-                ret = AbstractState::FORMAT_ERROR;
+                ret = FORMAT_ERROR;
                 break;
             }
 
@@ -70,10 +71,10 @@ ExpectArrayValueState::StateCode_Type
                 break;
             }else if (ptr->whichType() == QQJsonX::QQJSON_OBJECT){
                 AbstractState::doExpectValue(context, obj);
-                context->setCurState(AbstractState::Expect_CommaOrEndState);
+                context->setCurState(Expect_CommaOrEndState);
                 break;
             }else{
-                ret = AbstractState::FORMAT_ERROR;
+                ret = FORMAT_ERROR;
                 break;
             }
         }
@@ -86,7 +87,7 @@ ExpectArrayValueState::StateCode_Type
         }
 
         default:
-            return AbstractState::FORMAT_ERROR;
+            return FORMAT_ERROR;
     }
     
     return ret;

@@ -9,18 +9,13 @@
 class QQJsonDocument;
 class AbstractContext{
 public:
-    //定义使用的类型
-//    using ErrorCode_Type = int;
-
-    virtual AbstractState::ErrorCode_Type request(QQJsonDocument *doc) = 0; 
-
-    virtual void setCurState(AbstractState::State_Type state) = 0;
-    
-    std::stack<AbstractState::jsonPtr> &getStack(void){
+    virtual QQJson::StateCode_Type request(QQJsonDocument *doc) = 0; 
+    virtual void setCurState(QQJson::State_Type state) = 0;
+    std::stack<QQJson::jsonPtr> &getStack(void){
         return _stack;
     }
     
 private:
-    std::stack<AbstractState::jsonPtr> _stack;
+    std::stack<QQJson::jsonPtr> _stack;
 };
 #endif
