@@ -69,7 +69,7 @@ QQJson::StateCode_Type
             if (ptr->whichType() == QQJsonX::QQJSON_ARRAY){
                 ExpectArrayValueState::doExpectArrayValue(context, obj);
                 break;
-            }else if (ptr->whichType() == QQJsonX::QQJSON_OBJECT){
+            }else if (ptr->whichType() == QQJsonX::QQJSON_KEY){
                 AbstractState::doExpectValue(context, obj);
                 context->setCurState(Expect_CommaOrEndState);
                 break;

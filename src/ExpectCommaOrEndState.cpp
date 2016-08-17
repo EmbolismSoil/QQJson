@@ -23,12 +23,13 @@ QQJson::StateCode_Type
                        obj->whichType() != QQJsonX::QQJSON_ARRAY){
                 return QQJson::FORMAT_ERROR;
             }
-
+            context->getStack().pop();
             if (context->getStack().size() == 1){
+                context->getStack().push(obj);
                 return QQJson::FINISHED;
             }
             
-            context->getStack().pop();
+            //context->getStack().pop();
             auto ptr = context->getStack().top();
             if (ptr->whichType() == QQJsonX::QQJSON_KEY){
                 ret = AbstractState::doExpectValue(context, ptr);

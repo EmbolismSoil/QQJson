@@ -7,7 +7,7 @@ QQJson::StateCode_Type
          AbstractState::doExpectArrayValue(AbstractContext *context, 
                             QQJson::jsonPtr json)
 {
-    auto Stack = context->getStack();
+    std::stack<QQJson::jsonPtr> & Stack = context->getStack();
     auto array = Stack.top();
 
     if (array->whichType() != QQJsonX::QQJSON_ARRAY)
@@ -22,7 +22,7 @@ QQJson::StateCode_Type
 QQJson::StateCode_Type
   AbstractState::doExpectValue(AbstractContext*context, QQJson::jsonPtr ptr)
 {
-    auto Stack = context->getStack();   
+    std::stack<QQJson::jsonPtr> & Stack = context->getStack();
     auto Key = Stack.top();
     Stack.pop();
     if (Key->whichType() != QQJsonX::QQJSON_KEY)
