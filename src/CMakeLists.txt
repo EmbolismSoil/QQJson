@@ -1,3 +1,4 @@
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 SET(
 SRC_LIST 
 AbstractState.cpp
@@ -21,4 +22,4 @@ qqjsonx.cpp
 StartState.cpp
 )
 INCLUDE_DIRECTORIES(../includes)
-ADD_LIBRARY(libqqjson SHARED ${SRC_LIST})
+ADD_LIBRARY(qqjson SHARED ${SRC_LIST})
