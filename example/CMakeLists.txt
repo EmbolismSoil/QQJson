@@ -1,0 +1,3 @@
+ADD_EXECUTABLE(QQJson main.cpp)
+LINK_DIRECTORIES(../src)
+TARGET_LINK_LIBRARIES(libqqjson)
