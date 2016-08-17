@@ -17,6 +17,7 @@ public:
     QQJsonDocument(std::string &&);
     Token peekNextToken();
     //Token nextToken();
+    std::string getRawDoc(){return _Document;}
     void popToken();
     std::string readBoolen();
     std::string readString();
