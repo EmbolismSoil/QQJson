@@ -4,7 +4,7 @@
 
 ## 编译
 在linux下使用以下命令进行编译
-`mkdir build && cd build && cmake .. && make`
+`./build.sh`
 
 ## TO DO
 
