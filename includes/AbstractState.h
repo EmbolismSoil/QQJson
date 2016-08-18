@@ -16,6 +16,9 @@ public:
     static QQJson::StateCode_Type doExpectValue(AbstractContext* context, QQJson::jsonPtr ptr);
     
     static QQJson::StateCode_Type doExpectArrayValue(AbstractContext*, QQJson::jsonPtr);
+    AbstractState() = default;
+    AbstractState(AbstractState const &) = delete;
+    AbstractState const & operator=(AbstractState const &) = delete;
 };
 
 #endif

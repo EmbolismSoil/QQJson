@@ -15,6 +15,9 @@ public:
         return _stack;
     }
     
+    AbstractContext() = default;
+    AbstractContext(AbstractContext const &) = delete;
+    AbstractContext const &operator = (AbstractContext const &) = delete;
 private:
     std::stack<QQJson::jsonPtr> _stack;
 };
