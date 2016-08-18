@@ -13,5 +13,10 @@ namespace QQJson{
                  }State_Type;    
     
     using jsonPtr = std::shared_ptr<QQJsonX>;
+
+    template<class T, class Raw>
+        T const & to(Raw ptr){
+            return *(std::dynamic_pointer_cast<T>(ptr));
+        }
 }
 #endif

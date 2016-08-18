@@ -33,3 +33,7 @@ void QQJsonObject::addVaule(const std::string &key, std::shared_ptr<QQJsonX> val
     _ObjectMap[key] = value;
 }
 
+std::shared_ptr<QQJsonX> QQJsonObject::operator[](const std::string index)
+{
+    return _ObjectMap[index];
+}
