@@ -32,7 +32,7 @@ QQJson::StateCode_Type
             //context->getStack().pop();
             auto ptr = context->getStack().top();
             if (ptr->whichType() == QQJsonX::QQJSON_KEY){
-                ret = AbstractState::doExpectValue(context, ptr);
+                ret = AbstractState::doExpectValue(context, obj);
                 context->setCurState(QQJson::Expect_CommaOrEndState);
                break;
             }else if (ptr->whichType() == QQJsonX::QQJSON_ARRAY){

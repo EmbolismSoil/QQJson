@@ -20,6 +20,7 @@ QQJsonEncoder::encoderPtr
     std::stringstream buffer;  
     buffer << t.rdbuf();
     std::string contents(buffer.str());  
+    //std::cout << "raw input : " << std::endl << contents << std::endl;
     return QQJsonEncoder::fromString(contents);
 }
 

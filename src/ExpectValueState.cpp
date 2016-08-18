@@ -59,7 +59,7 @@ QQJson::StateCode_Type
             doc->readAToken();
             auto obj = std::make_shared<QQJsonObject>();
             context->getStack().push(obj);
-            context->setCurState(QQJson::Expect_ValueState);
+            context->setCurState(QQJson::Expect_KeyState);
             break;
         }
         default:
