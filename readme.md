@@ -6,6 +6,9 @@
 在linux下使用以下命令进行编译
 `./build.sh`
 
+## 注
+利用valgrind测试无内存泄漏
+
 ## TO DO
 
 + 仔细考量累的设计，从RAII以及Rule of 3角度考虑并修正
